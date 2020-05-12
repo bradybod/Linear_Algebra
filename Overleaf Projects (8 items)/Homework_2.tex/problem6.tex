@@ -1,0 +1,310 @@
+
+	\question \textbf{The crazy vector space.} Consider the set $W$ of vectors in $\mathbb{R}^2$ with the following definitions of vector addition and scalar multiplication:
+	
+	\[ \begin{bmatrix}
+			x_1 \\ x_2
+		\end{bmatrix} +
+		\begin{bmatrix}
+			y_1 \\ y_2
+		\end{bmatrix}
+		=
+		\begin{bmatrix}
+			x_1 + y_1 + 1 \\ x_2 + y_2 + 1
+		\end{bmatrix}, \qquad
+		\alpha\begin{bmatrix}
+			x_1 \\ x_2
+		\end{bmatrix} =
+		\begin{bmatrix}
+			\alpha x_1+\alpha -1 \\ \alpha x_2+\alpha -1
+		\end{bmatrix}. \]
+		
+		I hear your cry: ``You can't do that!'' But the thing is...I can. And there isn't really much you can do about it - I can make addition and multiplication anything I want. What I want \textit{you} to do is show that the crazy thing I made is actually a vector space. \footnote{The main purpose of this problem is to really get you comfortable with the properties of a vector space in a setting where it's harder to take them for granted, but there's a nice secondary purpose. Even though these operations may seem unnatural or not useful, this example shows just how far linear algebra can go. We can apply the ideas from this course to \textbf{all sorts of things.} We will see many applications of linear algebra in places you might not expect, and it always comes from viewing something as a vector space.}
+		
+		% Put % signs in front of each of the following lines to remove it
+		% from your homework (your file won't compile if the lines stay here)
+% 		\begin{center}
+% % 		\includegraphics[width=.3\linewidth]{meme}
+% 		\end{center}
+		
+		Prove that $W$ is a vector space over $\mathbb{R}$. (Hint: The ``zero vector'' and the additive inverses are not what you might expect.)
+		
+		\begin{solution}
+		    
+		    1:\\
+		    
+		    \begin{center}
+		        $
+		        \begin{bmatrix}
+		         x_1 \\ x_2
+		        \end{bmatrix}
+		        +
+		        \begin{bmatrix}
+		         y_1 \\ y_2
+		        \end{bmatrix}
+		        =
+		        \begin{bmatrix}
+		         x_1+y_1+1 \\ x_2 + y_2+1
+		        \end{bmatrix}
+		        =
+		        \begin{bmatrix}
+		         y_1 \\ y_2
+		        \end{bmatrix}
+		        +
+		        \begin{bmatrix}
+		         x_1 \\ x_2
+		        \end{bmatrix}
+		        $
+		    \end{center}
+		    
+		    2:\\
+		    \begin{center}
+		    $
+		    \left(
+		    \begin{bmatrix}
+		         x_1 \\ x_2
+		        \end{bmatrix}
+		        +
+		        \begin{bmatrix}
+		         y_1 \\ y_2
+		        \end{bmatrix}
+		    \right)
+		    +
+		    \begin{bmatrix}
+		         z_1 \\ z_2
+		        \end{bmatrix}
+		        =
+		        \begin{bmatrix}
+		         x_1+y_1+z_1+1 \\ x_2 + y_2+z_2+1
+		        \end{bmatrix}
+		        =
+		        \begin{bmatrix}
+		         x_1 \\ x_2
+		        \end{bmatrix}
+		        +
+		        \left(
+		        \begin{bmatrix}
+		         y_1 \\ y_2
+		        \end{bmatrix}
+		        +
+		        \begin{bmatrix}
+		         z_1 \\ z_2
+		        \end{bmatrix}
+		        \right)
+		    $
+		    \end{center}
+		    
+		    3:\\
+		    
+		    \begin{center}
+		    $
+		    \Vec{0} 
+		    = 
+		    \begin{bmatrix}
+		         -1 \\ -1
+		        \end{bmatrix}
+		        $
+		        \\
+		        $
+		        \begin{bmatrix}
+		         x_1 \\ x_2
+		        \end{bmatrix}
+		        +
+		        \begin{bmatrix}
+		         -x_1-1 \\ -x_2-2
+		        \end{bmatrix}
+		        =
+		        \begin{bmatrix}
+		         x_1 \\ x_2
+		        \end{bmatrix}
+		    $
+		    \end{center}
+		    
+		    
+		   4:\\
+		   
+		   \begin{center}
+		    $
+		    \Vec{z} 
+		    = 
+		    \begin{bmatrix}
+		         -x_1-2 \\ -x_2-2
+		        \end{bmatrix}
+		        $
+		        \\
+		        $
+		    \begin{bmatrix}
+		         x_1 \\ x_2
+		    \end{bmatrix}
+		    +
+		    \begin{bmatrix}
+		         -x_1-2 \\ -x_2-2
+		    \end{bmatrix}
+		    = 
+		    \begin{bmatrix}
+		         x_1-x_1-2 \\ x_2-x_2-2
+		        \end{bmatrix}
+		        =
+		        \begin{bmatrix}
+		         -1 \\ -1
+		    \end{bmatrix}
+		    =
+		    \Vec{0}
+		    $
+		    \end{center}
+		   
+		   
+		   5:\\
+		   
+		   \begin{center}
+		    $
+		    1
+		    \begin{bmatrix}
+		         x_1 \\ x_2
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+		         x_1 \\ x_2
+		    \end{bmatrix}
+		    $
+		    \end{center}
+		   
+		   
+		   6:\\
+		   
+		   \begin{center}
+		    $
+		    \left( \alpha \beta \right))
+		    \begin{bmatrix}
+		         x_1 \\ x_2
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+		        \alpha \beta x_1 + \alpha \beta -1 \\ \alpha \beta x_2 + \alpha \beta -1
+		    \end{bmatrix}
+		    $
+		    \\
+		    $
+		    \alpha \left( \beta 
+		    \begin{bmatrix}
+		    x_1 \\ x_2
+		    \end{bmatrix}
+		    \right)
+		    = \alpha 
+		    \begin{bmatrix}
+		   \beta x_1 + \beta -1 \\ \beta x_2 + \beta -1
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+		    \alpha \beta x_1 + \alpha \beta - \alpha + \alpha -1 \\ \beta x_2 + + \alpha \beta - \alpha + \alpha -1
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+		    \alpha \beta x_1 + \alpha \beta -1 \\ \alhpa \beta x_2 + \alpha \beta -1
+		    \end{bmatrix}
+		    $
+		    \end{center}
+		   
+		   7:\\
+		   
+		   \begin{center}
+		    $
+		    \alpha \left(
+		    \begin{bmatrix}
+		    x_1 \\ x_2
+		    \end{bmatrix}
+		    + 
+		    \begin{bmatrix}
+		    y_1 \\ y_2
+		    \end{bmatrix}
+		    \right)
+		    =
+		    \alhpa
+		    \begin{bmatrix}
+		        x_1 + y_1 +1\\ x_2 + y2 +1
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+		        \alpha x_1 + \alpha y_1 -1\\ \alpha x_2 + \alpha y2 -1
+		    \end{bmatrix}
+		    $
+		    \\
+		    $
+		    \alpha
+		    \begin{bmatrix}
+		    x_1 \\ x_2
+		    \end{bmatrix}
+		    +
+		    \alhpa
+		    \begin{bmatrix}
+		    y_1 \\ y_2
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+		    \alpha x_1 + \alpha -1 \\ \alpha x_2 + \alpha -1
+		    \end{bmatrix}
+		    +
+		    \begin{bmatrix}
+		    \alpha y_1 + \alpha -1 \\ \alpha y_2 + \alpha -1
+		    \end{bmatrix}
+		    =
+		   \begin{bmatrix}
+		    \alpha x_1 + \alpha y_1 + 2 \alpha -2 +1 \\ \alpha x_2 + \alpha y_2 + 2 \alpha -2 +1
+		    \end{bmatrix}
+		    $
+		    \end{center}
+		   
+		   
+		   8:\\
+		   
+		   \begin{center}
+		    $
+		    \left(
+		    \alhpa + \beta
+		    \right)
+		    \begin{bmatrix}
+		    x_1 \\ x_2
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+		    ( \alpha +  \beta) x_1 + ( \alpha +  \beta)-1 \\ 
+		    ( \alpha +  \beta) x_2 + ( \alpha +  \beta)-1
+		    \end{bmatrix}
+		    $
+		    \\
+		    $
+		    \alhpa
+		    \begin{bmatrix}
+		    x_1 \\ x_2
+		    \end{bmatrix}
+		    +
+		    \beta
+		    \begin{bmatrix}
+		    x_1 \\ x_2
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+		    \alpha x_1 + \alhpa -1 \\
+		    \alpha x_2 + \alhpa -1
+		    \end{bmatrix}
+		    +
+		    \begin{bmatrix}
+		    \beta x_1 + \beta -1 \\
+		    \beta x_2 + \beta -1
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+		    \alpha x_1 + \alhpa -1 + \beta x_1 + \beta -1 +1 \\
+		    \alpha x_2 + \alhpa -1 + \beta x_2 + \beta -1 +1 
+		    \end{bmatrix}
+		    $
+		    \\
+		    $
+		    =
+		    \begin{bmatrix}
+		    \alpha x_1 + \beta x_1 + \alpha + \beta -1 \\
+		    \alpha x_2 + \beta x_2 + \alpha + \beta -1
+		    \end{bmatrix}
+		    $
+		    \end{center}
+		   
+		\end{solution}

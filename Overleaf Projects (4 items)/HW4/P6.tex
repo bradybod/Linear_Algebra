@@ -1,0 +1,122 @@
+	\item The transformation $T\colon\mathbb{R}^2\to\mathbb{R}^2$ acts by $T((x,y)^\intercal) = (x+4y,-x)$. Find the matrix representation of $T$ with respect to the standard basis, $\mathcal{B}$.
+	
+	\begin{solution}
+	\newline
+		$T(\begin{bmatrix} 1 \\ 0 \end{bmatrix}) \to \begin{bmatrix} 1 \\ -1 \end{bmatrix}$
+		\\
+		$T(\begin{bmatrix} 0 \\ 1 \end{bmatrix}) \to \begin{bmatrix} 4 \\ 0 \end{bmatrix}$
+		\\
+		$
+		\begin{bmatrix}
+		1 & 4 \\
+		-1 & 0
+		\end{bmatrix}$
+	\end{solution}
+	
+	\item The transformation $T\colon\mathbb{R}^2\to\mathbb{R}^2$ acts by $T((x,y)^\intercal) = (3x+4y,y-x)$. Find the matrix representation of $T$ with respect to the domain basis $\mathcal{B}_1 = \{ (1,1)^\intercal, (2,-1)^\intercal \}$ and the codomain basis $\mathcal{B}_2 = \{ (0,5)^\intercal, (3,3)^\intercal \}$.
+	
+	\begin{solution}
+	Start by transforming the 2 basis vectors for $\mathbb{R}^2$
+		$T(x,y) \to (3x+4y, y-x)$
+		\\
+		$T(1,1) = (7,0) = \begin{bmatrix}7 \\ 0 \end{bmatrix} \to C_1\begin{bmatrix}0 \\ 5 \end{bmatrix} + C_2\begin{bmatrix}3 \\ 3 \end{bmatrix} = \begin{bmatrix}7 \\ 0 \end{bmatrix}$
+		\\
+		$C_1 = \frac{-7}{5}$
+		\\
+		$C_2 = \frac{7}{3}$
+		\\
+		\\
+		$T(2,-1) = (2,-3) = \begin{bmatrix}2 \\ -3 \end{bmatrix} \to C_1\begin{bmatrix}0 \\ 5 \end{bmatrix} + C_2\begin{bmatrix}3 \\ 3 \end{bmatrix} = \begin{bmatrix}2 \\ -3 \end{bmatrix}$
+		\\
+		$C_1 = \frac{2}{3}$
+		\\
+		$C_2 = \frac{2}{5}$
+		\\
+		\\
+		$T = \begin{bmatrix} \frac{-7}{5} & \frac{2}{3} \\ \\ \frac{7}{3} & \frac{-2}{5}\end{bmatrix}$
+	\end{solution}
+	
+	\item The transformation $T\colon\mathbb{R}^2\to\mathbb{R}^2$ acts by reflecting vectors across the $y$-axis. Find the matrix representation of $T$ with respect to the standard basis, $\mathcal{B}$.
+	
+	\begin{solution}
+		$T(x,y) = (-x,y)$
+		\\
+		$T(1,0) = (-1,0)$
+		\\
+		$T(0,1) = (0,1)$
+		\\
+		$A = 
+		\begin{bmatrix}-1 & 0 \\ 0 & 1 \end{bmatrix}_B$
+	\end{solution}
+	
+	\item The transformation $T\colon \mathcal{P}_2 \to \mathcal{P}_3$ acts by
+	$T(a+bx+cx^2) = \int_0^x (a+bt+ct^2) dt$. Find the matrix representation of $T$ with respect to the domain basis $\mathcal{B}_1 = \{ 1, x, x^2 \}$ and the codomain basis $\mathcal{B}_2 = \{ 1, x, x^2, x^3 \}$.
+	
+	\begin{solution}
+	$T(a+bx+cx^2) = ax+ \frac{1}{2} bx^2 + \frac{1}{3} cx^2$
+	\\
+	$T(1) = x \to \begin{bmatrix}0 \\ 1 \\ 0 \end{bmatrix}_{B_1} \to \begin{bmatrix} 0 \\ 1 \\ 0  \\ 0 \end{bmatrix}_{B_2}$
+	\\
+	$T(x) = \frac{1}{2}x^2\to \begin{bmatrix}0 \\ 0 \\ \frac{1}{2} \end{bmatrix}_{B_1} \to \begin{bmatrix}0 \\ 0 \\ \frac{1}{2} \\ 0\end{bmatrix}_{B_2}$
+	\\
+	$T(x^2) = \frac{1}{3}x^3\to \begin{bmatrix}0 \\ 0 \\ \frac{1}{3}x \end{bmatrix}_{B_1}\to \begin{bmatrix}0 \\ 0 \\ 0  \\ \frac{1}{3} \end{bmatrix}_{B_2}$
+	 \\
+	 \\
+	 $A  = \begin{bmatrix}
+	 0 & 0 & 0 \\
+	 1 & 0 & 0 \\
+	 0 & \frac{1}{2} & 0 \\
+	 0 & 0 & \frac{1}{3}
+	 \end{bmatrix}_{B_1B_2}$
+	
+	
+	\end{solution}
+	
+	\item The transformation $T\colon \mathcal{M}_2 \to \mathcal{M}_2$ acts by
+	$T(\begin{smallbmatrix}a&b\\c&d\end{smallbmatrix}) = \begin{smallbmatrix}2a&d\\2c&0\end{smallbmatrix}$. Find the matrix representation of $T$ with respect to the domain basis $\mathcal{B}_1 = \left\{ \begin{smallbmatrix}1&0\\0&0\end{smallbmatrix}, \begin{smallbmatrix}0&1\\0&0\end{smallbmatrix}, \begin{smallbmatrix}0&0\\1&0\end{smallbmatrix}, \begin{smallbmatrix}0&0\\0&1\end{smallbmatrix} \right\}$ and the codomain basis $\mathcal{B}_2 = \left\{ \begin{smallbmatrix}1&0\\0&1\end{smallbmatrix}, \begin{smallbmatrix}0&1\\1&0\end{smallbmatrix}, \begin{smallbmatrix}0&0\\5&0\end{smallbmatrix}, \begin{smallbmatrix}0&0\\0&-1\end{smallbmatrix} \right\}$.
+	
+	\begin{solution}
+		\begin{center}
+		    $T\left( \begin{bmatrix}1 & 0  \\ 0 & 0 \end{bmatrix} \right) = \begin{bmatrix}2 & 0  \\ 0 & 0 \end{bmatrix}$
+		    \\
+		    $T\left( \begin{bmatrix}0 & 1  \\ 0 & 0 \end{bmatrix} \right) = \begin{bmatrix}0 & 0  \\ 0 & 0 \end{bmatrix}$
+		    \\
+		    $T\left( \begin{bmatrix}0 & 0  \\ 1 & 0 \end{bmatrix} \right) = \begin{bmatrix}0 & 0  \\ 2 & 0 \end{bmatrix}$
+		    \\
+		    $T\left( \begin{bmatrix}0 & 0  \\ 0 & 1 \end{bmatrix} \right) = \begin{bmatrix}0 & 1  \\ 0 & 0 \end{bmatrix}$
+		    \\
+		    \end{center}
+		    General form: \\
+\begin{center}
+		    $C_1\begin{bmatrix}1 & 0  \\ 0 & 1 \end{bmatrix} + C_2\begin{bmatrix}0 & 1  \\ 1 & 0 \end{bmatrix} +
+		    C_3\begin{bmatrix}0 & 0  \\ 5 & 0 \end{bmatrix} + 
+		    C_4\begin{bmatrix}0 & 0  \\ 0 & -1 \end{bmatrix}$
+		    \\
+		     $\begin{bmatrix}2 & 0  \\ 0 & 0 \end{bmatrix} = 2\begin{bmatrix}1 & 0  \\ 0 & 1 \end{bmatrix} + 0\begin{bmatrix}0 & 1  \\ 1 & 0 \end{bmatrix} +
+		     0\begin{bmatrix}0 & 0  \\ 5 & 0 \end{bmatrix} + 
+		     2\begin{bmatrix}0 & 0  \\ 0 & -1 \end{bmatrix} =
+		     \begin{bmatrix}2 \\ 0 \\ 0 \\2 \end{bmatrix}$
+		     \\
+		     $\begin{bmatrix}0 & 0  \\ 0 & 0 \end{bmatrix} = 0\begin{bmatrix}1 & 0  \\ 0 & 1 \end{bmatrix} + 0\begin{bmatrix}0 & 1  \\ 1 & 0 \end{bmatrix} +
+		     0\begin{bmatrix}0 & 0  \\ 5 & 0 \end{bmatrix} + 
+		     0\begin{bmatrix}0 & 0  \\ 0 & -1 \end{bmatrix} =
+		     \begin{bmatrix}0 \\ 0 \\ 0 \\0 \end{bmatrix}$
+		     \\
+		     $\begin{bmatrix}0 & 0  \\ 2 & 0 \end{bmatrix} = 0\begin{bmatrix}1 & 0  \\ 0 & 1 \end{bmatrix} + 0\begin{bmatrix}0 & 1  \\ 1 & 0 \end{bmatrix} +
+		     \frac{2}{5}\begin{bmatrix}0 & 0  \\ 5 & 0 \end{bmatrix} + 
+		     0\begin{bmatrix}0 & 0  \\ 0 & -1 \end{bmatrix} =
+		     \begin{bmatrix}0 \\ 0 \\ \frac{2}{5} \\0 \end{bmatrix}$
+		     \\
+		     $\begin{bmatrix}0 & 1  \\ 0 & 0 \end{bmatrix} = 0\begin{bmatrix}1 & 0  \\ 0 & 1 \end{bmatrix} + 1\begin{bmatrix}0 & 1  \\ 1 & 0 \end{bmatrix} +
+		     0\begin{bmatrix}0 & 0  \\ 5 & 0 \end{bmatrix} + 
+		     1\begin{bmatrix}0 & 0  \\ 0 & -1 \end{bmatrix} =
+		     \begin{bmatrix}0 \\ 1 \\ 0 \\1 \end{bmatrix}$
+		    \\
+		    $A = \begin{bmatrix}
+		    2 & 0  & 0 & 0 \\
+		    0 & 0  & 0 & 1 \\
+		    0 & 0  & \frac{2}{5} & 0 \\
+		    2 & 0  & 0 & 1 \\
+		    \end{bmatrix}_{B_1B_2}$
+		\end{center}
+	\end{solution}

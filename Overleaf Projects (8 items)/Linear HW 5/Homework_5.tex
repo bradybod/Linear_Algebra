@@ -1,0 +1,419 @@
+\documentclass[]{exam}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[en-US, showdow]{datetime2}
+\usepackage{tikz}
+\usepackage{mathabx}
+
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+
+\title{Homework 5\\
+	}
+\date{ \today %You can remove the first % in this line to show the current days date.
+	}
+\author{Brady Bodily%Your Name %You should probably change this to your actual name and remove the first %, at least if you want credit.
+	}
+\begin{document}
+\maketitle
+
+\printanswers %comment out this line to hide your answers.
+
+What recitation section are you in?
+
+\hfill \circled{501} \hfill 502 \hfill 503 \hfill.
+
+
+
+\begin{questions}
+	\question Consider the vector $\vec{b} = (b_1, \ldots, b_m)$ and the matrix $A = \begin{bmatrix}1 \\ \vdots \\ 1\end{bmatrix}$.
+	
+	\begin{parts}
+	
+%---------------------------------------------------------------------------
+		\part Explain when the system $A\vec{x} = \vec{b}$ has a solution.
+			\begin{solution}
+				Because $\vec{b}$ has to be in the column space of $A\vec{x}$ must be a scalar of $\vec{b}$. So $\vec{b}$ must be a $m\times1$ matrix.
+			\end{solution}
+%---------------------------------------------------------------------------			
+		\part Suppose the system from part (a) has no solution. Use least squares to find the best possible solution to the system, call the solution $\hat{x}$. 
+			\begin{solution}
+				Using the projection equation and multiplying both sides by $A^T$ we can get the following.
+
+				\begin{gather*}
+				    A\hat{x}=P\vec{b}\\
+				    A\hat{x}=A(A^TA)^{-1}A^T\vec{b} \\
+				    A^TA\hat{x}=A^TA(A^TA)^{-1}A^T\vec{b} \\
+				    A^TA\hat{x}=A^T\vec{b} \\
+				\end{gather*}
+				Now if we multiply by $(A^TA)^{-1}$ we can reduce the left side of the equation.
+				\begin{gather*}
+				    (A^TA)^{-1}A^TA\hat{x}=(A^TA)^{-1}A^T\vec{b} \\
+				    \hat{x}=(A^TA)^{-1}A^T\vec{b}
+				\end{gather*}
+
+			\end{solution}
+			
+%---------------------------------------------------------------------------
+		\part Recall that the error vector is defined to be $\vec{e} = \vec{b} - A \hat{x}$. In statistics the sum of the squares of the errors is called the variance. That is the variance is $|| \vec{b} - A \hat{x}||^2$. Compute the variance.  
+			\begin{solution}
+				Given $\vec{e}=\vec{b}-A\hat{x}$ we can infer $|\vec{e}|=|\vec{b}-A\hat{x}|$. So $|\vec{b}-A\hat{x}|^2=|\vec{e}|^2$ and $|\vec{e}|^2=\vec{e}^T\vec{e}$. Since $\hat{x}$ is a scaler of $A$ and $A$ is comprised of 1's so $A$ becomes a vector of $\hat{x}$ entries so $$|\vec{e}|^2=\sum_{n=1}^{m}(b_n-\hat{x})^2$$
+			\end{solution}
+			
+%---------------------------------------------------------------------------
+		\part Suppose that $\vec{b} = (1,2,6)$. Use least squares to find the best solution to $A \vec{x} = \vec{b}$. How is the best solution related to the entries of $\vec{b}$?
+			\begin{solution}
+				Given $\vec{b}=\begin{bmatrix}1 \\ 2 \\ 6\end{bmatrix}$ and using the equation $A^TA\hat{x}=A^T\vec{b}$ we can get, \newline
+				    \begin{gather*}
+				    \begin{bmatrix}1 & 1 & 1 \end{bmatrix}
+				    \begin{bmatrix}1 \\ 1 \\ 1 \end{bmatrix}
+				    \hat{x}=
+				    \begin{bmatrix}1 & 1 & 1 \end{bmatrix}
+				    \begin{bmatrix}1 \\ 2 \\ 6 \end{bmatrix}
+				    \\
+				    3\hat{x}=9
+				    \\
+				    \hat{x}=3
+				    \end{gather*}
+				    So the best solution is $$\left(\sum_{n=1}^3\vec{b}_n \right)\frac{1}{3}$$
+			\end{solution}
+			
+%---------------------------------------------------------------------------
+		\part We know that the error vector is orthogonal to $A \hat{x}$. Using the example from the previous 2 parts, show that $A \hat{x}$ is orthogonal to $\vec{e}$.
+			\begin{solution}
+				This can be shown by using the equation $\vec{e}=\vec{b}-A\vec{x}$ we get the following equation that we can solve for. \newline
+				\begin{gather*}
+				    \begin{bmatrix}
+				    -2 \\ -1 \\ 3
+				    \end{bmatrix}_{\vec{e}}
+				    =
+				     \begin{bmatrix}
+				    1 \\ 2 \\ 6
+				    \end{bmatrix}_{\vec{b}}
+				    -
+				     \begin{bmatrix}
+				    3 \\ 3 \\ 3
+				    \end{bmatrix}_{A\vec{x}}
+				  \\
+				    \begin{bmatrix}
+				    3 & 3 & 3
+				    \end{bmatrix}
+				    \begin{bmatrix}
+				    -2 \\ -1 \\ 3    
+				    \end{bmatrix}
+				   \\
+				    -6-3+9=0
+				\end{gather*}
+			\end{solution}
+				
+	\end{parts}
+
+	\question
+	
+	\begin{parts}
+	
+	%---------------------------------------------------------------------------
+	
+		\part Find orthonormal vectors $q_1, q_2, q_3$ such that $q_1, q_2$ span the column space of 
+			\[A = \begin{bmatrix}
+			4 & 1 \\ -4 & 5 \\ -2 & 1
+			\end{bmatrix}\]
+		\begin{solution}
+			To find $q_1$ we use $q_1=$ $v_1\over{|v_1|}$ to find $q_2$ we use $q_2=v_2-q_1^Tv_2q_1$
+			\begin{gather*}
+			    q_1=\begin{bmatrix}4 \\ -4 \\ -2 \end{bmatrix}1/6 = \begin{bmatrix}2/3 \\ -2/3 \\ -1/3 \end{bmatrix} 
+			    \\
+			    v_2=\begin{bmatrix}1 \\ 5 \\ 1 \end{bmatrix}-\begin{bmatrix}2/3 & -2/3 & -1/3 \end{bmatrix} \begin{bmatrix}1 \\ 5 \\ 1 \end{bmatrix}\begin{bmatrix}2/3 \\ -2/3 \\ -1/3 \end{bmatrix}=\begin{bmatrix}3 \\ 3 \\ 0\end{bmatrix}
+			    \\
+			    q_2=v_2/|v_2|=\begin{bmatrix}1/\sqrt{2} \\ 1/\sqrt{2} \\ 0\end{bmatrix}
+			\end{gather*}
+			Per the fundamental theorem of linear algebra we know $N(A^T)\perp C(A)$. Using this we can solve for $N(A^T)$ using $A^T=\begin{bmatrix} 4 & -4 & -2 \\ 1 & 5 & 1\end{bmatrix}$ we get 
+			$rref(A^T)=R=
+			\begin{bmatrix} 
+			1 & 0 & -1/4 \\ 
+			0 & 1 & 1/4
+			\end{bmatrix}$ 
+			Using this matrix we can solve for the 
+			$N(A^T)=
+			\begin{bmatrix} 
+			1/4 \\ -1/4 \\ 1 
+			\end{bmatrix}$ 
+			which when normalized is the vector. $q_3$ \newline
+			$q_3 = \begin{bmatrix}\sqrt{2}/6 \\ -\sqrt{2}/6 \\ 2\sqrt{2}/3 \end{bmatrix}$
+		\end{solution}	
+		
+		%---------------------------------------------------------------------------
+		
+		\part Which of the four fundamental subspaces contains $q_3$? 
+			\begin{solution}
+					Using A to find the left null-space we get a vector which when normalized gives us the vector $q_3$.
+			\end{solution}	
+			
+		%---------------------------------------------------------------------------
+		\part Solve $A \vec{x} = (1,2,7)$ by least squares.
+			\begin{solution}
+			    Using the equation $A^TA\vec{x}=A^T\vec{b}$ we get the following. 
+			    \begin{gather*}
+			        \begin{bmatrix}
+			        4 & -4 & -2 \\
+			        1 & 5 & 1 \\
+			        \end{bmatrix}
+			        \begin{bmatrix}
+			        4 & 1 \\
+			        -4 & 5 \\
+			        -2 & 1 \\
+			        \end{bmatrix}
+			        \vec{x}
+			        =
+			        \begin{bmatrix}
+			        4 & -4 & -2 \\
+			        1 & 5 & 1 \\
+			        \end{bmatrix}
+			        \begin{bmatrix}
+			        1 \\
+			        2 \\
+			        7 \\
+			        \end{bmatrix} 
+			        \\
+			        \begin{bmatrix}
+			        36 & -18 \\
+			        -18 & 27 \\
+			        \end{bmatrix}
+			        \vec{x}= \begin{bmatrix}
+			        -18 \\
+			        9 \\
+			        \end{bmatrix}
+			        \\
+			        \begin{bmatrix}
+			        36 & -18 \\
+			        0 & -18 \\
+			        \end{bmatrix}
+			        \vec{x}= \begin{bmatrix}
+			        -18 \\
+			        9 \\
+			        \end{bmatrix} 
+			        \\
+			        36x_1-18x_2=-18
+			        \\
+			        18x_2=9
+			        \\
+			        x_2=1/2
+			        \\
+			        x_1=-1/4
+			    \end{gather*}
+			    So $\vec{x}=(-1/4, 1/2)$
+			    
+			\end{solution}	
+	\end{parts}
+	
+	
+	\question \S 5.1 \# 1-6 Please complete the problems from the book. These will be graded on completion only. You do not need to justify your answers.
+	\begin{solution}
+        \begin{enumerate}
+            \item 
+                \begin{gather*}
+                    det(2A)=8 \\
+                    det(-A)=1/2 \\
+                    det(A^{-1})=2 \\
+                    det(A^2)=1/4 \\
+                \end{gather*}
+            \item
+                \begin{gather*}
+                    det(A/2)=-1/8 \\
+                    det(-A)=1 \\
+                    det(A^{-1})=-1 \\
+                    det(A^2)=1 \\
+                \end{gather*}
+            \item
+            \begin{parts}
+                \part False if $A=-I$ then $det(I-I)=0$ while $1+det(-I)=2$
+                \part True $det(ABC)=det(A)det(BC)=det(A)det(B)det(C)$
+                \part False $4det(I)=4$, $det(4I)=16$, $4\neq16$
+                \part False 
+                    \begin{gather*}
+                        A=
+                        \begin{bmatrix}
+                        0 & 0 \\
+                        0 & 1
+                        \end{bmatrix} 
+                        B=
+                        \begin{bmatrix}
+                        0 & 1 \\
+                        1 & 1
+                        \end{bmatrix}
+                        \\
+                        AB-BA
+                        \\
+                        \begin{bmatrix}
+                        0 & 0 \\
+                        0 & 1
+                        \end{bmatrix} 
+                        \begin{bmatrix}
+                        0 & 1 \\
+                        1 & 1
+                        \end{bmatrix}
+                        -
+                        \begin{bmatrix}
+                        0 & 1 \\
+                        1 & 1
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                        0 & 0 \\
+                        0 & 1
+                        \end{bmatrix} 
+                        =
+                        \begin{bmatrix}
+                        0 & -1 \\
+                        1 & 0
+                        \end{bmatrix} 
+                        =
+                        (-1)(-1)
+                        \begin{bmatrix}
+                        1 & 0 \\
+                        0 & 1
+                        \end{bmatrix} 
+                    \end{gather*}
+                    Therefore the determinant = 1 which is not 0
+            \end{parts}
+            \item For $J_3$ we swap $R_4$ and $R_3$. For $J_4$, we need to swap $R_1$ and $R_4$ as well as  $R_2$ and $R_3$. This leaves $J_3$ 1 row swap from $I$, so $det(J_3)=-1det(I)=-1$. $J_4$ is 2 row swaps from $I$ so we get $det(J_4)=-1^2det(I)=1$.
+            \item $n=5$ requires 2 swaps, $n=6$ requires 3 swaps, $n=4$ requires 4 swaps.  with this we can get $(n-1)/2$ for odd number n's and $n/2$ for even.  For $J_{101}$ the determinant is -1.
+            \item
+            \begin{gather*}
+                \begin{bmatrix}
+                0 & t \\
+                1 & 1
+                \end{bmatrix}=t
+                \begin{bmatrix}
+                0 & 1 \\
+                1 & 1
+                \end{bmatrix} \\
+                \begin{bmatrix}
+                0 & 0 \\
+                1 & 1
+                \end{bmatrix}=t
+                \begin{bmatrix}
+                0 & 0 \\
+                1 & 1
+                \end{bmatrix} \\
+                \begin{bmatrix}
+                0 & 0 \\
+                1 & 1
+                \end{bmatrix}-t
+                \begin{bmatrix}
+                0 & 0 \\
+                1 & 1
+                \end{bmatrix}=0
+                \\
+                (1-t)
+                \begin{bmatrix}
+                0 & 0 \\
+                1 & 1
+                \end{bmatrix} = 0
+            \end{gather*}
+            In order for t to work the determinant has to be 0
+        \end{enumerate}
+	\end{solution}
+	
+	\question You need to prove that every orthogonal matrix ($Q^TQ = I$) has determinant 1 or -1. Use the product rule for determinants ($|AB| = |A| |B|$) and the transpose rule ($|Q| = |Q^T|$).
+	\begin{solution}
+		Given $|Q^T|=|Q|$ and $|I|=1$ we can solve algebraically. 
+		\begin{gather*}
+		    |Q^TQ|=|I| \\
+		    |Q^T||Q|= 1 \\
+		    |Q^2| = 1 \\
+		    \sqrt{|Q^2|}= \sqrt{1} \\
+		    |Q|=\pm 1 
+		\end{gather*}
+	\end{solution}
+			
+	
+	\question \S 5.1 \# 28 State if the following statements are true are false. If true provide an explanation, if false give a 2 by 2 counterexample.
+	
+	\begin{parts}
+		\part If $A$ is not invertible, then $AB$ is not invertible. 
+		\begin{solution}
+			True, by the product rule of determinents
+		\end{solution}
+		\part The determinant of $A$ is always the product of its pivots.
+		\begin{solution}
+			False,
+			$
+			\begin{bmatrix} 
+			   0 & 0 \\
+			   0 & 1
+			\end{bmatrix}
+			$ $0\neq1$
+		\end{solution}
+		\part The determinant of $A-B$ equals $|A| - |B|$.
+		\begin{solution}
+			False, 
+			\begin{gather*}
+			    det
+			    \left(
+			    \begin{bmatrix}
+			    3 & 3 \\
+			    0 & 4
+			    \end{bmatrix}-
+			    \begin{bmatrix}
+			    2 & 3 \\
+			    0 & 3
+			    \end{bmatrix}
+			    \right)=
+			    det \left(
+			    \begin{bmatrix}
+			    3 & 3 \\
+			    0 & 4
+			    \end{bmatrix}\right)- det\left(
+			    \begin{bmatrix}
+			    2 & 3 \\
+			    0 & 3
+			    \end{bmatrix}
+			    \right) 
+			    \\
+			    det
+			    \begin{bmatrix}
+			    1 & 0 \\
+			    0 & 1
+			    \end{bmatrix}=12-6
+			    \\
+			    1\neq6
+			\end{gather*}
+		\end{solution}
+		\part $AB$ and $BA$ have the same determinant. 
+		\begin{solution}
+			True, Using the product rule of determinants we get 
+			\begin{gather*}
+			    det(A)det(B)=det(B)det(A)
+			\end{gather*}
+			Since the determinant is a scaler the commutative property of multiplication applies.
+		\end{solution}
+	\end{parts}
+
+	\question Consider a 3 by 3 matrix whose entries are all 1 or -1. Show the maximum determinant of such a matrix is 4. Give an example with determinant equal to 4. 
+	
+		\begin{solution}
+			Since the determinant is calculated using the diagonal of the matrix the higher the values in the diagonal the higher the determinant. The easiest way to do this is to use addition only.  We ill eliminate by adding rows.  So the diagonal will initially be mad of 1's and since we are eliminating by addition everything above the diagonal will be positive. To eliminate 2,1 and 3,1 they must be negative to eliminate 3,2 and avoid duplicate rows, 3,2 must be negative. This means that 3,2 will be eliminated during the elimination of 3,1 which will leave A in upper triangular form, this leaves 3,3 a 2. This will result in the following matrix.
+			\begin{gather*}
+			    \begin{bmatrix}
+			        1 & 1 & 1 \\
+			        -1 & 1 & 1 \\
+			        -1 & -1 & 1
+			    \end{bmatrix}\xrightarrow{}\begin{bmatrix}
+			        1 & 1 & 1 \\
+			        0 & 2 & 2  \\
+			        0 & 0 & 2
+			    \end{bmatrix}
+			\end{gather*}
+			Which has a determinant of 4 as the matrix is made of only $\pm1$, (1, 2, 2) is the largest you can get on the diagonal, making th max determinant of the matrix 4.
+		\end{solution}
+		
+\end{questions}
+
+
+
+
+
+\end{document}

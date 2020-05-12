@@ -1,0 +1,462 @@
+\documentclass[]{exam}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[en-US, showdow]{datetime2}
+
+
+\title{Homework 4\\
+	%Due \DTMdate{2018-03-08}\\ %Add a % at the begining of the line to remove the due date from the title (or just delete this line entirely) 
+	%at 10:30 am
+	}
+\date{ \today %You can remove the first % in this line to show the current days date.
+	}
+\author{Brady Bodily
+	}
+\begin{document}
+\maketitle
+
+\printanswers %comment out this line to hide your answers.
+
+
+\begin{questions}
+	\question Construct a matrix with the required properties or say why it is impossible. If it is impossible to construct a matrix with the given property you must give an explanation that relies on orthogonality of subspaces.:
+	
+	\begin{parts}
+		\part Column space contains $\begin{bmatrix}1 \\2\\-3\end{bmatrix}$ and $\begin{bmatrix}2 \\-3\\5\end{bmatrix}$, nullspace contains $\begin{bmatrix}1 \\1\\1\end{bmatrix}$
+			\begin{solution}
+				Using the given vectors from the column space and the null space, we can create the matrix $A$=
+				$\begin{bmatrix}
+				1 & 2 & -3 \\
+				2 & -3 & 1 \\
+				-3 & 5 & -2 \\ 
+				\end{bmatrix}$.
+				The third column is created by adding the first two columns, then setting the third column's value equal to the additive inverse of the total of columns 1 and 2.  Doing this will give the $\vec{0}$ when the dot product is used on $A\vec{x}=\vec{0}$
+			\end{solution}
+%------------------------------------------------------			
+		\part Row space  contains $\begin{bmatrix}1 \\2\\-3\end{bmatrix}$ and $\begin{bmatrix}2 \\-3\\5\end{bmatrix}$, nullspace contains $\begin{bmatrix}1 \\1\\1\end{bmatrix}$
+			\begin{solution}
+				Using the vectors of the rowspace we can construct the matrix $A= \begin{bmatrix}
+			    1 & 2 & -3 \\
+			    2 & -3 & 5 \\
+				\end{bmatrix}$.
+				Using the fundemental therom of linear algebra, the row space adn null space must be orthogonal.  To determine orthogonality the row space dotted with the null space will return a result of the $\vec{0}$ when true.  If the result is a non zero vector they are not orthogonal. So, 
+				\newline
+				$\begin{bmatrix}
+			    1 & 2 & -3 \\
+			    2 & -3 & 5 \\
+				\end{bmatrix}$
+				$\begin{bmatrix}
+			    1 \\
+			    1 \\
+			    1 \\
+				\end{bmatrix} \neq \vec{0}$, therefore it is not orthogonal.
+			\end{solution}
+%------------------------------------------------------			
+		\part $A\vec{x} = \begin{bmatrix}1 \\1\\1\end{bmatrix}$ has a solution and $A^T \begin{bmatrix}1 \\0\\0\end{bmatrix}= \begin{bmatrix}0 \\0\\0\end{bmatrix}$
+			\begin{solution}
+				Per the fundamental theorem of linear algebra $C(A^T) \perp N(A)$, for $A\vec{x} = \begin{bmatrix}
+				    1 \\
+				    1 \\
+				    1 \\
+				\end{bmatrix}$.
+				The vector 
+				$\vec{x} = \begin{bmatrix}
+				    1 \\
+				    1 \\
+				    1 \\
+				\end{bmatrix}$
+				must be in the column space of A.  For 
+				$A^T \begin{bmatrix}
+				    1 \\
+				    0 \\
+				    0 \\
+				\end{bmatrix} = 
+				\begin{bmatrix}
+				    0 \\
+				    0 \\
+				    0 \\
+				\end{bmatrix} $ then the vector
+				$\begin{bmatrix}
+				    1 \\
+				    0 \\
+				    0 \\
+				\end{bmatrix}$ must be in the null space of $A^T$. To determine if they are orthogonal we will take the dot product of $\begin{bmatrix}
+				    1 \\
+				    1 \\
+				    1 \\
+				\end{bmatrix}\begin{bmatrix}
+                    1 & 0 & 0
+				\end{bmatrix} =  1$ which is not 0, therefore is not orthogonal and not possible.
+			\end{solution}
+%------------------------------------------------------			
+		\part $A$ is a nonzero matrix with every row orthogonal to every column
+			\begin{solution}
+				The $\vec{0}$ is orthogonal to itself and every other vector, given the matrix $\begin{bmatrix}
+				    0 & 1 \\
+				    0 & 0 \\
+				\end{bmatrix}$. We can set up the following tests for orthogonal tests.
+				\newline
+				$\begin{bmatrix}
+				    0 & 1
+				\end{bmatrix}\begin{bmatrix}
+                    1 \\
+                    0
+				\end{bmatrix} =  0$
+				\newline
+				$\begin{bmatrix}
+				    0 & 0
+				\end{bmatrix}\begin{bmatrix}
+                    1 \\
+                    0
+				\end{bmatrix} =  0$
+				\newline
+				$\begin{bmatrix}
+				    0 & 1
+				\end{bmatrix}\begin{bmatrix}
+                    0 \\
+                    0
+				\end{bmatrix} =  0$
+				\newline
+				$\begin{bmatrix}
+				    0 & 0
+				\end{bmatrix}\begin{bmatrix}
+                    0 \\
+                    0
+				\end{bmatrix} =  0$.
+				\newline
+				As they are all equal to 0 we have found a non zero matrix with every row orthogonal to every column
+			\end{solution}
+%------------------------------------------------------			
+		\part The columns add up to $\vec{0}$, rows add to a row of $1$'s
+			\begin{solution}
+				Given a $3\times3$ matrix 
+				$A=\begin{bmatrix}
+				    a_1 & a_2 & a_3 \\
+				    a_4 & a_5 & a_6 \\
+				    a_7 & a_8 & a_9 \\
+				\end{bmatrix}$
+				by the column method of matrix multiplication for $\begin{bmatrix}
+				    a_1 & a_2 & a_3 \\
+				    a_4 & a_5 & a_6 \\
+				    a_7 & a_8 & a_9 \\
+				\end{bmatrix}\begin{bmatrix}
+				    1 \\
+				    1 \\
+				    1 \\
+				\end{bmatrix}=
+				\begin{bmatrix}
+				    0 \\
+				    0 \\
+				    0 \\
+				\end{bmatrix}$
+			    the matrix $
+			    \begin{bmatrix}
+				    1 \\
+				    1 \\
+				    1 \\
+				\end{bmatrix}$
+				must be in the null space of the matrix $A$ in order to be true.  Then by using the row method of matrix multiplication $\vec{u}A=\begin{bmatrix}
+				    1 & 1 & 1
+				\end{bmatrix}$, the vector $\begin{bmatrix}
+				    1 & 1 & 1
+				\end{bmatrix}$ is a linear combination of the rows of $A$. The row space of $A$ is the column space of $A^T$. By the the fundamental theorem of linear algebra $C(A^T) \perp N(A)$, so the vectors $\begin{bmatrix}
+				    1 \\
+				    1 \\
+				    1 \\
+				\end{bmatrix} 
+				\begin{bmatrix}
+				    1 & 1 & 1
+				\end{bmatrix}$ must be orthogonal. To test this we use the dot product if the result is $\vec{0}$, then they are orthogonal in this case they are not and this is not possible.
+			\end{solution}				
+	\end{parts}
+%####################################################
+
+	\question Image a 3-dimensional vector space. Suppose the wall $W$ and the floor $V$ are two subspaces of the 3-dimensional space. The floor and wall are not orthogonal because they share a nonzero vector (along the line where they meet). In fact, no two planes in $\mathbb{R}^3$ can be orthogonal. 
+	
+	\begin{parts}
+		\part Consider the two planes described by the column space of the following matrices.
+	
+	\[A= \begin{bmatrix}1 & 2 \\1 & 3\\1 & 2\end{bmatrix} \hspace{1cm} B=\begin{bmatrix}5 & 4\\ 6 & 3 \\ 5 & 1\end{bmatrix}\] 
+	
+	Consider the augmented matrix $[A \, B]$ and find a vector $\vec{v}$ in $C(A)$ and $C(B)$, perhaps the null space of $[A \, B]$ can help you find $\vec{v}$. Explain how the augmented matrix can be used to find $\vec{v}$.
+			\begin{solution}
+				We first start by creating an augmented matrix $C=[AB]$ $C=
+				\begin{bmatrix}
+				    1 & 2 & 5 & 4 \\
+				    1 & 3 & 6 & 3 \\
+				    1 & 2 & 5 & 1 \\
+				\end{bmatrix}$ using elimination we can get $\begin{bmatrix}
+				    1 & 2 & 5 & 4 \\
+				    0 & 1 & 1 & -1 \\
+				    0 & 0 & 0 & -3 \\
+				\end{bmatrix}$. If we find a vector that is in the null space of $C$. We can use the relationship with the null space vector and the columns of C to find a vector in both $A$ and $C$. 
+				\newline
+				$\begin{bmatrix}
+				    1 & 2 & 5 & 4 \\
+				    0 & 1 & 1 & -1 \\
+				    0 & 0 & 0 & -3 \\
+				\end{bmatrix}\vec{x}=\begin{bmatrix}
+				    0 \\ 0 \\ 0 \\ 0 \\
+				\end{bmatrix}$
+				
+				$\vec{x}=\begin{bmatrix}
+				    -3 \\ -1 \\ 1 \\ 0 \\
+				\end{bmatrix}$ So,
+				\newline
+				$-3\begin{bmatrix}
+				    1 \\ -1 \\ 1 \\ 
+				\end{bmatrix}_1+ -1\begin{bmatrix}
+				    2 \\ 3 \\ 2 \\ 
+				\end{bmatrix}_2+1\begin{bmatrix}
+				    5 \\ 6 \\ 5 \\ 
+				\end{bmatrix}_3+0\begin{bmatrix}
+				    4 \\ 3 \\ 1 \\ 
+				\end{bmatrix}_4=\vec{0}$. Since the vectors 1 and 2 are linear combinations of $A$ and the vectors 3 and 4 are linear combinations of $B$.  Therefore 
+				\newline
+				$-3\begin{bmatrix}
+				    1 \\ -1 \\ 1 \\ 
+				\end{bmatrix}_1+ -1\begin{bmatrix}
+				    2 \\ 3 \\ 2 \\ 
+				\end{bmatrix}_2=\begin{bmatrix}
+				    3 \\ 3 \\ 3
+				\end{bmatrix}+\begin{bmatrix}
+				    2 \\ 3 \\ 2
+				\end{bmatrix}=\begin{bmatrix}
+				    5 \\ 6 \\ 5
+				\end{bmatrix}$
+				\newline
+				So $\begin{bmatrix}
+				    5 \\ 6 \\ 5
+				\end{bmatrix}$ must also be in the column space of $B$ as well in order to equal the $\vec{0}$
+			\end{solution}	
+%------------------------------------------------------
+	\part Generalize the result of the previous part to higher dimensions by considering subspaces $V$ and $W$ of $\mathbb{R}^n$. If $V$ has dimension $p$ and $W$ has dimension $q$, then what inequality involving $p$, $q$ and $n$ will guarantee that $V$ and $W$ intersect in some nonzero vector?
+			\begin{solution}
+				Each vector in the null space corresponds to a linear combination of the columns of $A$ and columns of $B$ that yields the $\vec{0}$ because of this there has to be a linear dependence between the columns of $A$ and $B$ which means there is exactly 1 intersection for each free variable.  We can define the matrix $C$ as $C=[VW]$ in order for $V$ and $W$ to guarantee intersection at a non zero vector the dimension of  $N(C) > 0$ if $p+q > n$. Otherwise there is not any free variable and can not intersect at some non zero vector.
+			\end{solution}	
+	\end{parts}
+	
+%####################################################	
+	\question \S 4.2 \# 16 What linear combination of $(1,2,-1)$ and  $(1,0,1)$ is closest to $\vec{b} = (2,1,1)$? 
+	
+	\begin{solution}
+		Given $P=A(A^TA)^{-1}A^T$ and $A\vec{x}=\vec{b}$ we can solve for $\vec{x_0}$ with $PA\vec{x_0}=P\vec{b}$
+		\newline
+		$A(A^TA)^{-1}A^TA\vec{x_0}=A(A^TA)^{-1}A^T\vec{b}$
+	    \newline
+	    $IA^TA\vec{x_0}=A^TA(A^TA)^{-1}A\vec{b}$
+	    \newline
+	    $A^TA\vec{x_0}=A^T\vec{b}$
+	    \newline
+	    Given the linear combination (1, 2, -1) adn (1, 0, 1) we can construct the matrix $A=\begin{bmatrix}
+	        1 & 1 \\
+	        2 & 0 \\
+	        -1 & 1 \\
+	    \end{bmatrix}$.
+	    We can use the matrix A and set it up as the equation above and solve for the $\vec{x_0}$.
+	    \newline
+	    $\begin{bmatrix}
+	        1 & 2 & -1 \\
+	        1 & 0 & 1 \\
+	    \end{bmatrix}
+	    \begin{bmatrix}
+	        1 & 1 \\
+	        2 & 0 \\
+	        -1 & 1 \\
+	    \end{bmatrix}\vec{x_0}=\begin{bmatrix}
+	        3 \\ 3
+	    \end{bmatrix}$.
+	    So $\vec{x_0}=\begin{bmatrix}
+	        \frac{1}{2} \\ \frac{3}{2}
+	    \end{bmatrix}$ which are the coefficients of the closest linear combinations of $A$.
+	\end{solution}
+%#####################################################
+	\question Let $P$ be a projection matrix. 
+	
+	\begin{parts}
+		\part Show that if $P^2 = P$, then $(I-P)^2 = I-P$. 
+	\begin{solution}
+		The best way to show this is algebraically manipulating the equation.
+		\newline
+		$P=A(A^TA)^-A^T$
+		So for $P^2=P$
+		\newline
+		$A(A^TA)^-A^TA(A^TA)^-A^T$
+		\newline
+		$AI(A^TA)^-A^T$
+	    \newline
+	    $P=A(A^TA)^-A^T-=P^2$
+	    \newline
+	    Then, 
+	    \newline
+	    $(I-P)=(I-P)^2$
+	    \newline
+	    $(I-P)=I-2P+P^2$
+	    \newline
+	    $(I-P)=I-2P+P$
+	    \newline
+	    $(I-P)=I-P$
+	\end{solution}
+%-----------------------------------------------------
+		\part It turns out that $I-P$ is also a projection matrix. Show that $I-P$ projects onto a space perpendicular to the subspace, onto which, $P$ projects vectors. If $P$ projects onto the column space then $I - P$ projects onto which subspace? 
+	
+	\begin{solution}
+		With the projected vectors $P\vec{x}$ and $(I-P)y$ knowing $P^2=P$ and $P^T=P$. Given this we can set up the equation,
+		\newline
+		$(P\vec{x})^T(I-P)\vec{y}=\vec{y}$
+		\newline
+		$(\vec{x}^TP^T)(\vec{y}-P\vec{y})$
+		\newline
+		$\vec{x}^TP^T\vec{y}-\vec{x}^TP^TP\vec{y}$
+		\newline
+		$\vec{x}^TP\vec{y}-\vec{x}^TPP\vec{y}$
+		\newline
+		$\vec{x}^TP\vec{y}-\vec{x}^TP^2\vec{y}$
+		\newline
+		In order to be orthogonal as stated then the following equation must be true.
+		\newline
+		$\vec{x}^TP\vec{y}-\vec{x}^TP\vec{y}=0$
+		\newline
+		Projects onto the $N(A^T)$.
+	\end{solution}
+	\end{parts}
+%####################################################	
+	\question 	
+	
+	\begin{parts}
+	\part Find the best line through the origin which fits the points $(1,1),(2,1),(3,2),(4,2)$. 
+		\begin{solution}
+			Given $y=mx+b$, we can use the given points plug them in to the equation and then create a matrix from them.
+			\newline
+			$m(1)+b=1$
+			\newline
+			$m(2)+b=1$
+			\newline
+			$m(3)+b=2$
+			\newline
+			$m(4)+b=2$
+			\newline
+			So, $\begin{bmatrix}
+			    1 \\ 2 \\ 3 \\ 4
+			\end{bmatrix} 
+			\begin{bmatrix}
+			    m
+			\end{bmatrix}=
+			\begin{bmatrix}
+			    1 \\ 1 \\ 2 \\ 2
+			\end{bmatrix}$
+			\newline
+			using $A^TAx=A^T\vec{b}$ we get 
+			\newline
+			$\begin{bmatrix}
+			    1 & 2 & 3 & 4
+			\end{bmatrix}
+			\begin{bmatrix}
+			    1 \\ 2 \\ 3 \\ 4
+			\end{bmatrix}
+			\begin{bmatrix}
+			    m
+			\end{bmatrix}=\begin{bmatrix}
+			    1 & 2 & 3 & 4
+			\end{bmatrix}
+			\begin{bmatrix}
+			    1 \\ 1 \\ 2 \\2
+			\end{bmatrix} \rightarrow 30m=17$.
+			\newline
+			So $m=\frac{17}{30}$, further $y=\frac{17}{30}x+b$ and since it passes through the origin $b=0$. Finally we get $y=\frac{17}{30}x$
+			
+		\end{solution}
+%------------------------------------------------------
+	\part Find the best parabola which fits the points $(-1, 1/4), (1,1/4), (2,1), (3,2).$
+		\begin{solution}
+			Given $y=ax^2+bx+c$ we can use the given points to fill in the x and y variables then construct a matrix from them.
+			\newline
+			$a(-1)^2+b(-1)+c=\frac{1}{4}$
+			\newline
+			$a(1)^2+b(1)+c=\frac{1}{4}$
+			\newline
+			$a(2)^2+b(2)+c=1$
+			\newline
+			$a(3)^2+b(3)+c=2$
+			\newline,
+			we get, $\begin{bmatrix}
+			    1 & -1 & 1 \\
+			    1 & 1 & 1 \\
+			    4 & 2 & 1 \\
+			    9 & 3 & 1 \\
+			\end{bmatrix}
+			\begin{bmatrix}
+			    a \\ b \\ c
+			\end{bmatrix}=
+			\begin{bmatrix}
+			    \frac{1}{4} \\
+			    \frac{1}{4} \\
+			    1 \\
+			    2 \\
+			\end{bmatrix}$.
+			\newline
+			Using $A^TA\vec{x}=A^T\vec{b}$ we get, 
+			\newline
+			$
+			\begin{bmatrix}
+			    1 & 1 & 4 & 9 \\
+			    -1 & 1 & 2 & 3 \\
+			    1 & 1 & 1 & 1 \\
+			\end{bmatrix}
+			\begin{bmatrix}
+			    1 & -1 & 1 \\
+			    1 & 1 & 1 \\
+			    4 & 2 & 1 \\
+			    9 & 3 & 1 \\
+			\end{bmatrix}
+			\begin{bmatrix}
+			    a \\ b \\ c
+			\end{bmatrix}=
+			\begin{bmatrix}
+			    1 & 1 & 4 & 9 \\
+			    -1 & 1 & 2 & 3 \\
+			    1 & 1 & 1 & 1 \\
+			\end{bmatrix}
+			\begin{bmatrix}
+			    \frac{1}{4} \\
+			    \frac{1}{4} \\
+			    1 \\
+			    2 \\
+			\end{bmatrix}$
+			\newline
+			$\begin{bmatrix}
+			    99 & 35 & 15 \\
+			    35 & 15 & 5 \\
+			    15 & 5 & 4 \\
+			\end{bmatrix}
+			\begin{bmatrix}
+			    a \\ b \\ c
+			\end{bmatrix}=
+			\begin{bmatrix}
+			    22.5 \\ 8 \\ 3.5
+			\end{bmatrix}
+			$
+		    So,
+		    $99a +35b +15c = 22.5$
+		    \newline
+		    $35a+15b+5c=8$
+		    \newline
+		    $15a+5b+4c=3.5$
+		    \newline
+		    Therefore $\begin{tabular}{c} a=.21 \\ b=.0238 
+		    \\ c=.0568\end{tabular}$.
+		    Finally we get $y=.21x^2+.0238x+.0568$!
+			
+			
+		\end{solution}
+	\end{parts}
+
+		
+\end{questions}
+
+
+
+
+
+\end{document}

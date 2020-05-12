@@ -1,0 +1,147 @@
+\question \S 3.1 \# 10. Which of the following subsets of $\mathbb{R}^3$ are actually subspaces of $\mathbb{R}^3$? You should either prove that the set is a subspace or show that the set does not have one of the properties of subspaces.
+	\begin{parts}
+		\part The plane of vectors $(b_1, b_2, b_3)$ with $b_1 = b_2$.
+			\begin{solution}
+			\newline
+				$\begin{bmatrix}
+				    0 \\ 0 \\ 0
+				\end{bmatrix}$
+				$\in W$
+				\newline
+				$\begin{bmatrix}
+				    a \\ a \\ b
+				\end{bmatrix}$
+				+
+				$\begin{bmatrix}
+				    c \\ c \\ d
+				\end{bmatrix}$
+				=
+				$\begin{bmatrix}
+				    a+c \\ a+c \\ b+d
+				\end{bmatrix}$
+				$\in W$
+				\newline
+				$a\begin{bmatrix}
+				x \\ x\\ y
+				\end{bmatrix}$
+				=
+				$\begin{bmatrix}
+				ax \\ ax\\ ay
+				\end{bmatrix}$
+				$\in W$
+			\end{solution}
+		\part The plane of vectors with $b_1 = 1$.
+		\begin{solution}
+			$\begin{bmatrix}
+			1 \\ x \\ y
+			\end{bmatrix}
+			\neq
+			\begin{bmatrix}
+			0 \\ 0 \\ 0
+			\end{bmatrix}
+			$
+			$\notin W$
+			
+		\end{solution}
+		\part The vectors $(b_1, b_2, b_3)$ with $b_1b_2b_3 = 0$.
+		\begin{solution}
+		    Vector addition fails to stay in subspace
+		    $\begin{bmatrix}
+		        0 \\ a \\ b
+		    \end{bmatrix}$
+		    +	
+		    $\begin{bmatrix}
+		        c \\ 0 \\ d
+		    \end{bmatrix}$
+		    =
+		    $\begin{bmatrix}
+		        c \\ a \\ b+d
+		    \end{bmatrix}$
+		\end{solution}
+		\part All linear combinations of $\vec{v} = (1,4,0)$ and $\vec{w} = (2,2,2)$.
+		\begin{solution}
+			Zero vector exists.
+			\\
+			Addition would still be a linear combination of the two vectors.
+			\\
+			Scalar multiple would be a a linear combination.
+		\end{solution}
+		\part All vectors $(b_1, b_2, b_3)$ with $b_1 + b_2 + b_3 = 0$.
+		\begin{solution}
+		\begin{equation}
+			\vec{0} = 0
+			\end{equation}
+			\begin{multline}
+		    \newline
+		    \begin{bmatrix}
+		    a \\ b\\ c
+		    \end{bmatrix}
+		    +
+		    \begin{bmatrix}
+		    x \\ y\\ z
+		    \end{bmatrix}
+		    \begin{bmatrix}
+		    a+x \\ b+y\\ c+z
+		    \end{bmatrix}
+		        \\
+		        a+x+b+y+c+z = 0
+		        \\
+		        (a+b+c)= 0+(x+y+z) = 0
+		        \\
+		        0+0=0
+		        \\
+			\end{multline}
+			\begin{equation}
+			    \alpha \begin{bmatrix}
+			    x \\y \\z
+			    \end{bmatrix}
+			    =
+			    \alpha \begin{bmatrix}
+			    \alpha x \\\alpha y \\\alpha z
+			    \end{bmatrix}
+                =
+                \alpha(x+y+z)
+                =
+                \alpha 0 = 0
+			\end{equation}
+		\end{solution}
+		\part All vectors $(b_1, b_2, b_3)$ with $b_1 \leq b_2 \leq b_3$.
+		\begin{solution}
+		\\The Zero vector exists. 
+			\begin{multline}
+			\\
+			    \begin{bmatrix}
+			        x \\ y \\z
+			    \end{bmatrix}
+			    +
+			    \begin{bmatrix}
+			        a \\ b \\c
+			    \end{bmatrix}
+			    =
+			    \begin{bmatrix}
+			        x+a \\ y+b \\z+c
+			    \end{bmatrix}
+			    \\
+			    x \leq y
+			    \\
+			    y \leq b
+			    \\
+			    So,
+			    x+a \leq y+b
+			    \\
+			\end{multline}
+			\begin{equation}
+			\alpha
+			    \begin{bmatrix}
+			        x \\ y \\z
+			    \end{bmatrix}
+			    =
+			    \begin{bmatrix}
+    			    \alpha x \\ \alpha y \\ \alpha z
+			    \end{bmatrix}
+			    \\
+			\end{equation}
+			Therefore all variables maintain their order of size.
+			
+		\end{solution}
+	\end{parts}

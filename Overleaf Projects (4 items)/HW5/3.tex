@@ -1,0 +1,29 @@
+		Given $P=A(A^TA)^{-1}A^T$ and $A\vec{x}=\vec{b}$ we can solve for $\vec{x_0}$ with $PA\vec{x_0}=P\vec{b}$
+		\newline
+		$A(A^TA)^{-1}A^TA\vec{x_0}=A(A^TA)^{-1}A^T\vec{b}$
+	    \newline
+	    $IA^TA\vec{x_0}=A^TA(A^TA)^{-1}A\vec{b}$
+	    \newline
+	    $A^TA\vec{x_0}=A^T\vec{b}$
+	    \newline
+	    Given the linear combination (1, 2, -1) adn (1, 0, 1) we can construct the matrix $A=\begin{bmatrix}
+	        1 & 1 \\
+	        2 & 0 \\
+	        -1 & 1 \\
+	    \end{bmatrix}$.
+	    We can use the matrix A and set it up as the equation above and solve for the $\vec{x_0}$.
+	    \newline
+	    $\begin{bmatrix}
+	        1 & 2 & -1 \\
+	        1 & 0 & 1 \\
+	    \end{bmatrix}
+	    \begin{bmatrix}
+	        1 & 1 \\
+	        2 & 0 \\
+	        -1 & 1 \\
+	    \end{bmatrix}\vec{x_0}=\begin{bmatrix}
+	        3 \\ 3
+	    \end{bmatrix}$.
+	    So $\vec{x_0}=\begin{bmatrix}
+	        \frac{1}{2} \\ \frac{3}{2}
+	    \end{bmatrix}$ which are the coefficients of the closest linear combinations of $A$.

@@ -1,0 +1,392 @@
+\documentclass[]{exam}
+
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage[en-US, showdow]{datetime2}
+\usepackage{tikz}
+\usepackage{arydshln}
+\usepackage{gensymb}
+\usepackage{wasysym}
+
+
+\newcommand {\mb}{\begin{bmatrix}\begin{tabular}{ccc}}
+\newcommand {\me} {\end{tabular} \end{bmatrix}}
+\newenvironment{smallbmatrix}
+{\left[\begin{smallmatrix}}
+{\end{smallmatrix}\right]}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand{\vv}{$\begin{bmatrix} \begin{tabular}{c}
+            $\textit{x}$ \\ $\textit{y}$ \\ $\textit{z}$
+        \end{tabular} \end{bmatrix}$}
+\newcommand{\uu}{$\begin{bmatrix} \begin{tabular}{c}
+		    $\textit{y}$ \\ $\textit{z}$ \\ $\textit{x}$
+		\end{tabular} \end{bmatrix}$}
+\newcommand{\p}{$\begin{bmatrix} \begin{tabular}{ccc}
+		     0 & 1 & 0  \\
+		     0 & 0 & 1  \\
+		     1 & 0 & 0  \\
+		\end{tabular} \end{bmatrix}$}
+\newcommand{\q}{$\begin{bmatrix} \begin{tabular}{ccc}
+		     0 & 0 & 1  \\
+		     1 & 0 & 0  \\
+		     0 & 1 & 0  \\
+		\end{tabular} \end{bmatrix}$}		
+
+\title{Homework 1\\
+	Due \DTMdate{2020-01-24} %Add a % at the begining of the line to remove the due date from the title (or just delete this line entirely) 
+	}
+\date{ \today %You can remove the first % in this line to show the current days date.
+	}
+\author{Name: Brady Bodily \\
+        \footnotesize Collaborators: None \\
+		\footnotesize 	\frownie + \twonotes = \smiley \\
+		\footnotesize Recitation Section: 504 \\
+		}
+\begin{document}
+\maketitle
+
+\printanswers %comment out this line to hide your answers.
+
+
+\begin{questions}
+	\question Let $\vec{v} = \begin{bmatrix} x \\ y \\z\end{bmatrix}$ and $\vec{u} = \begin{bmatrix} y \\ z \\x\end{bmatrix}$. Find a matrix $P$ so that $P\vec{v}=\vec{u}$, then find matrix $Q$ so that $Q\vec{u} = \vec{v}$. Explain the relationship between $P$ and $Q$.
+	
+    	\begin{solution}
+    	 In order to solve this we will need to construct a permutation matrix $P$.  Permutation matrices are created by permutation of the rows, and columns of the identity matrix using multiplication.  For example if we have a vector $\vec{w} = \begin{bmatrix} a \\ b \\ c \end{bmatrix}$ and we want a permutation matrix $P$ so that the result were $\vec{f} = \begin{bmatrix} c \\ b \\ a \end{bmatrix}$ $P$ would equal \p .  We immediately know that because $\vec{v}$ has 3 rows $P$ will be a $3 \times 3$ matrix.
+         $\vec{v}$ and $\vec{u}$ are both vectors. Now that we know the relationship of a  permutation matrix and a vector we can begin to solve for $P$ and $Q$.
+    	 We can work through the permutation row by row.
+		 $P=$\p
+		 Now that we have $P$ we can verify it by plugging it back in to the equation. 
+		 \p \vv $=$ \uu
+         Now we do the same thing for the equation $Q\vec{u}=\vec{v}$. So that,
+         $Q=$\q
+         Now we plug it back in to the equation $Q\vec{u}=\vec{v}$ to verify that it is  correct. \q \uu $=$ \vv Looking at the relationship between $P$, $Q$, $\vec{v}$, and $\vec{u}$ you may notice that if $P\vec{v}=\vec{u}$ and $Q\vec{u}=\vec{v}$ then $P$ and $V$ are inverse of each other.  Which means that $P^{-1}=Q$ and $Q^{-1}=P$. If a square matrix has an inverse it is non-singular, given that we can classify $P$ and $Q$ as non-singular matrices. To verify that they are truly inverse of each other we can multiply $PQ$ if the result is the identity matrix then they are inverse. So,
+         \newline
+         \begin{center}
+         $PQ=\begin{bmatrix}\begin{tabular}{ccc}
+             0*0+1*1+0*0 & 0*0+1*0+0*1 & 0*1+1*0+0*0 \\
+             0*0+0*1+0*0 & 0*0+0*0+1*1 & 0*1+0*0+0*0 \\
+             1*0+0*1+0*0 & 1*0+0*0+1*0 & 1*0+0*0+1*1 
+         \end{tabular}\end{bmatrix}= \begin{bmatrix}\begin{tabular}{ccc}
+             1 & 0 & 0 \\
+             0 & 1 & 0 \\
+             0 & 0 & 1 \\
+         \end{tabular} \end{bmatrix}$
+         \end{center}
+
+	\end{solution}
+	\question If $A$ is a matrix and $\vec{u}$ is a vector, the product $A\vec{v}$ is also a vector. One way to conceptualize this matrix multiplication is to think of $A$ as \emph{transforming} the vector $\vec{u}$ to a new vector. That is, associated with $A$ is a function whose rule of assignment is $f(\vec{u}) = A\vec{u}$. \\ The goal of this problem is to find a matrix $R$ whose transformation rotates vectors in $\mathbb{R}^2$ by $45^\circ$. That is, for a vector $\vec{v}$, the vector $R\vec{v}$ should be rotated $45^\circ$ counterclockwise. The vector $\begin{smallbmatrix}1 \\0 \end{smallbmatrix}$ should be rotated to $\begin{smallbmatrix} \sqrt{2}/2 \\ \sqrt{2}/2 \end{smallbmatrix}$ and the vector $\begin{smallbmatrix}0 \\1 \end{smallbmatrix}$ should be rotated to $\begin{smallbmatrix} -\sqrt{2}/2 \\ \sqrt{2}/2 \end{smallbmatrix}$. Use those two facts to find the matrix $R$. \\ Finally, to show that you have the correct matrix, consider the vector $\vec{v} = \begin{smallbmatrix} \cos\theta \\ \sin\theta \end{smallbmatrix}$ and show that $R\vec{v}$ is a vector that has been rotated by $45^\circ$ from $\vec{v}$
+	
+	
+	\begin{solution}
+	    To start we will look at $\begin{bmatrix}1\\0\end{bmatrix}$ which is in the first quadrant of the unit circle so the rotation matrix is $\begin{bmatrix}cos\theta\\sin\theta\end{bmatrix}$ when we plug in the $45\degree$ in place of $\theta$ this gives us $\begin{bmatrix}\sqrt{2}/2\\ \sqrt{2}/2\end{bmatrix}$.  Now we do the same thing for $\begin{bmatrix}0\\1\end{bmatrix}$, which becomes $\begin{bmatrix}sin\theta\\cos\theta\end{bmatrix}$. We plug in $45\degree$ for $\theta$ and we get the following $\begin{bmatrix}-\sqrt{2}/2\\\sqrt{2}/2\end{bmatrix}$. All that is left is to combined the matrices which results in, 
+	    $\begin{bmatrix}\begin{tabular}{cc}
+	    $\text{$\sqrt{2}/2$}$ & $\text{$-\sqrt{2}/2$}$ \\
+	    $\text{$\sqrt{2}/2$}$ & $\text{$\sqrt{2}/2$}$
+	    \end{tabular}\end{bmatrix}
+	    $.
+	\end{solution}
+	
+	\question Consider the system of equations \begin{align*}
+		3x-2y =&\ b_1\\
+		6x-4y =&\ b_2
+	\end{align*}
+	and determine a way to test if the system has a solution. In other words determine a relationship between $b_1$ and $b_2$ so the system has a solution. How many solutions will the system have?
+	
+	\begin{solution}
+		The easiest way to see if there is a relation between the equations will be to put them into a matrix, and use an elimination matrix that will give us a matrix of either upper or lower triangular form.  Something to consider before we begin is that we can not have a zero in the pivot point! Given the system of equations we can create the matrix, 
+		$\begin{bmatrix} \begin{tabular}{cc:c}
+		     \circled{3} & -2 & $\text{$b_1$}$\\
+		     6 & \circled{-4} & $\text{$b_2$}$\\
+		\end{tabular}\end{bmatrix}$ in which the pivot points are circled.
+		If we attempt to reduce this matrix our elimination matrix would look like the following,
+		$\begin{bmatrix}\begin{tabular}{cc}
+		     1 & 0 \\
+		    -2 & 1
+		\end{tabular}\end{bmatrix}$.
+		Now if you try to apply the elimination matrix to get rid of the 2,1 position you will find that it in turn changes the 2,2 position to 0.  $\begin{bmatrix}\begin{tabular}{cc|cc:cc}
+		     1 & 0 & \circled{3} & -2 & \circled{3} & -2 \\
+		    -2 & 1 & 6 & \circled{-4} & 0 & \circled{0}
+		\end{tabular}\end{bmatrix}$As mentioned before we can not have a 0 in the pivot position. If during elimination you get a row of 0's you can determine that the matrix is singular.  So now we know it is a singular matrix, making further observations we can see that if $2*b_1=b_2$ then in at least one scenario we have infinite solutions as they are the same line, however if not the lines are parallel and will have no solutions.
+	\end{solution}. 
+	
+	\question \S 2.2 \# 12. Convert this to matrix form then reduce this system to upper triangular form by two row operations:
+	
+	\begin{align*}
+	2x + 3y + z =&\ 8\\4x + 7y + 5z =&\ 20\\
+	-2y + 2z =&\ 0.
+	\end{align*}
+	
+	Circle the pivots. Solve by back substitution for $z, y, x$. 
+	
+	\begin{solution}
+	    To solve this we will start with Gaussian Elimination, Gaussian Elimination is the process of using elementary row operations to progressively eliminate variables until only one is left. We will start by putting the given system of equations into the matrix $A$. $A=\mb
+	    \circled{2} & 3 & 1 \\
+	    4 & 7  & 5 \\
+	    0 & -2 & 2 
+	    \me$
+	    We can now begin to build our elimination matrix.  Notice that 2 is circled that is because it is our first pivot as there are no values before it nothing more needs to be done on the first row. In order to eliminate position 2,1 we will need to subtract 2 of the first row from the second.  Therefore, $\mb 1 & 0 & 0 \\
+	    -2 & 1 & 0 \\
+	    0 & 0 & 0  \\
+	   \me_{E_{2,1}}
+	   \mb 
+	   \circled{2} & 3 & 1 \\
+	    0 & \circled{1}  & 3 \\
+	    0 & -2 & 2
+	   \me$
+	   Now that we have eliminated everything to the left of the second pivot we can move on and get the third pivot.  The 3,1 position is already 0 so we will have the identity matrix for the 3,1 elimination matrix.  $\mb 1 & 0 & 0 \\
+	    0 & 1 & 0 \\
+	    0 & 0 & 1  \\
+	   \me_{E_{3,1}}
+	   \mb 
+	   \circled{2} & 3 & 1 \\
+	    0 & \circled{1}  & 3 \\
+	    0 & -2 & 2
+	   \me$.
+	   Finally we can get the last pivot by eliminating the 3,2 position, this can be achieved by taking 2 copies of row two and adding it to the third row.   $\mb 1 & 0 & 0 \\
+	    0 & 1 & 0 \\
+	    0 & 2 & 1  \\
+	   \me_{E_{3,2}}
+	   \mb 
+	   \circled{2} & 3 & 1 \\
+	    0 & \circled{1} & 3 \\
+	    0 & 0 & \circled{8}
+	   \me$
+	   
+	   We now need to make sure that we multiply the $\vec{v}$ $\begin{bmatrix}\begin{tabular}{c} 8 \\ 20 \\ 0 
+	   \end{tabular}\end{bmatrix}$, by the same values as the elimination rows. Which will result in $\begin{bmatrix}\begin{tabular}{c} 8 \\ 4 \\ -8 
+	   \end{tabular}\end{bmatrix}$
+	   From here we can plug $x$, $y$, and $z$.
+	   $\begin{bmatrix}\begin{tabular}{ccc|c:c}
+	       2 & 3 & 1 & x & 8 \\
+	       0 & 1 & 3 & y & 4 \\
+	       0 & 0 & 8 & z & -8 \\
+	   \end{tabular} \end{bmatrix}=$
+	   \begin{align*} 
+	        2x + 3y + z =&\ 8 \\
+	           y + 3z = &\ 4 \\
+	             8z = &\ 8 \\
+	   \end{align*}
+	   Using this we can easily determine the values of all variables. 
+	   \begin{align*}
+	       x = &\ 2 \\
+	       y = &\ 1 \\
+	       z = &\ 1
+	   \end{align*}
+	   
+	\end{solution}
+	
+	
+	\question \S 2.2 \# 19. Which number $q$ makes this system singular and which right side $t$ gives it infinitely many solutions? Find the solution that has $z = 1$. 
+	
+	\begin{align*}
+	x + 4y -2z =&\ 1\\
+	x + 7y - 6z =&\ 6\\
+	3y + qz =&\ t.\\
+	\end{align*}
+	
+	\begin{solution}
+		Like the previous problems we will put the system of equations into a matrix $A$.  $(A\vec{v}=b)=\begin{bmatrix}\begin{tabular}{ccc|c:c}
+		     1 & 4 & -2 & x & 1\\
+		     1 & 7 & -6 & y & 6\\
+		     0 & 3 & q & z & t
+		\end{tabular}\end{bmatrix}$
+		From here we will use an elimination matrix $E$ to get $A$ into upper triangular form $U$
+        $\mb
+            1 & 0 & 0 \\
+            -1 & 1 & 0 \\
+            0 & -1 & 1
+        \me==\begin{bmatrix}\begin{tabular}{ccc|c}
+            \circled{1} & 4 & -2 & 1 \\
+            0 & \circled{3} & -4 & 5 \\
+            0 & 0 & \circled{4+q} & t-5   
+        \end{tabular}\end{bmatrix}$.
+        As previously mentioned to get a singular matrix row three must be all zeros.  In order to achieve this we will need to set the pivot $4+q=0$ which tells us that $q$ must equal $-4$.  From here we can also determine that if the right side of the equation were to equal zero there is the possibility of infinite solutions so using the equation $0=t-5$ we find that if $t=5$ then there would be an infinite number of solutions.  Finally to solve the system of equations so that $z=1$. We can only use the first two equations as the third could have infinite solutions.
+        \begin{align*}
+            \text{$x+4y-2z=$} &\ 1 \\
+            \text{$3y-4z=$} &\ 5 \\
+        \end{align*} Therefore, 
+        \begin{align*}
+            \text{$3y=$} &\ 9 &\ \text{$x+4(3)-2(-1)=$} &\ 1 \\
+            \text{$y=$} &\ 3 &\ \text{$x=$} &\ -9 \\
+        \end{align*}
+	\end{solution}
+	
+	\question \S 2.3 \# 3. Consider the matrix $A$ given below. Which three elementary elimination matrices $E_{2,1}, E_{3,1}, E_{3,2}$ put $A$ into upper triangular form $U$? That is find $E_{3,2}, E_{3,1},$ and $ E_{2,1}$ so that $E_{3,2} E_{3,1} E_{2,1} A = U $
+	
+	\[A = \begin{bmatrix}
+	1 & 1 & 0 \\
+	4 & 6 & 1 \\
+	-2 & 2 & 0
+	\end{bmatrix}\]
+	 Multiply the matrices $E_{2,1}, E_{3,1}, E_{3,2}$ to obtain $M$, then verify that $MA =U$.
+	 
+	 \begin{solution}
+	    As described in the previous problems we will create elimination matrices to put the system of equations into upper triangular form. 
+	    \newline
+	 	$\mb
+	 	    1 & 0 & 0 \\
+	 	    -4 & 1 & 0 \\
+	 	    0 & 0 & 1
+	 	\me_{E_{2,1}}
+	 	\mb
+	 	    \circled{1} & 1 & 0 \\
+	 	    0 & \circled{2} & 1 \\
+	 	    -2 & 2 & 0 \\
+	 	\me$
+	 	\newline
+	 	$\mb
+	 	    1 & 0 & 0 \\
+	 	    0 & 1 & 0 \\
+	 	    2 & 0 & 1
+	 	\me_{E_{3,1}}
+	 	\mb
+	 	    \circled{1} & 1 & 0 \\
+	 	    0 & \circled{2} & 1 \\
+	 	    0 & 2 & 0 \\
+	 	\me$
+	 		\newline
+	 	$\mb
+	 	    1 & 0 & 0 \\
+	 	    0 & 1 & 0 \\
+	 	    0 & -1 & 1
+	 	\me_{E_{3,2}}
+	 	\mb
+	 	    \circled{1} & 1 & 0 \\
+	 	    0 & \circled{2} & 1 \\
+	 	    0 & 0 & \circled{-1} \\
+	 	\me$
+	 	\newline
+	 	Now we begin to multiply the elimination matrices to get $M$, it is important to remember that we must multiply in the opposite order that we made them. So we get, 
+	 	\newline
+	 	$
+	 	\mb
+	 	    1 & 0 & 0 \\
+	 	    -4 & 1 & 0 \\
+	 	    0 & 0 & 1
+	 	\me_{E_{2,1}}
+	 	\mb
+	 	    1 & 0 & 0 \\
+	 	    0 & 1 & 0 \\
+	 	    2 & 0 & 1
+	 	\me_{E_{3,1}}
+	 	=\mb
+	 	    1 & 0 & 0 \\
+	 	    -4 & 1 & 0 \\
+	 	    2 & 0 & 1
+	 	\me$
+	 	\newline
+	 	\newpage
+	 	$
+	 	    \mb
+	 	        1 & 0 & 0 \\
+	 	        -4 & 1 & 0 \\
+	 	        2 & 0 & 1
+	 	    \me 
+	 	    \mb
+	 	        1 & 0 & 0 \\
+	 	        0 & 1 & 0 \\
+	 	        0 & -1 & 1
+	 	    \me_{E_{3,2}}=
+	 	    \mb
+	 	        1 & 0 & 0 \\
+	 	        -4 & 1 & 0 \\
+	 	        10 & -2 & 1
+	 	    \me_{M}
+	 	$
+	 	\newline So now we can verify $MA=U$
+	 	\newline
+	 	$\mb
+	 	        1 & 0 & 0 \\
+	 	        -4 & 1 & 0 \\
+	 	        10 & -2 & 1
+	 	    \me_{M}
+	 	\mb
+	 	    1 & 1 & 0 \\
+	 	    4 & 6 & 1 \\
+	 	    -2 & 2 & 0 \\
+	 	\me_{A} = 
+	 	\mb
+	 	    1+0+0 & 1+0+0 & 0+0+0 \\
+	 	    -4+4+0 & -4+6+0 & 0+1+0 \\
+	 	    10-8-2 & 10-12+2 & 0-2+0
+	 	\me=
+	 	\mb
+	 	    1 & 1 & 0 \\
+	 	    0 & 2 & 1 \\
+	 	    0 & 0 & -2
+	 	\me
+	 	$
+	 	
+	 \end{solution}
+	 
+	 \question Consider the product $EB$ and indicate if the following statements are true or false. If a statement is true provide a proof, otherwise give a counterexample. 
+	 
+	  \begin{parts}
+	  	\part If the third column of $B$ is all zero, the third column of $EB$ is all zero.
+	  	\begin{solution}
+	  	Because of the way matrix multiplication works the third column will have 0's.  We will work out a random matrix and demonstrate that $EB$'s third column is 0's.
+	  	\newline
+	  		$\mb
+	  		    1 & 1 & 0 \\
+	  		    4 & 6 & 0 \\
+	  		    2 & -2 & 0 \\
+	  		\me
+	  		\mb
+	  		    1 & 0 & 0 \\
+	  		    -4 & 1 & 0 \\
+	  		    -2 & 2 & 1
+	  		\me_{E}=
+	  		\mb
+	  		    -3 & 1 & 0 \\
+	  		    -20 & 6 & 0 \\
+	  		    10 & -2 & 0
+	  		\me_{EB}$
+	  	\end{solution}
+	  	\part If the third row of $B$ is all zero, the third row of $EB$ is all zero.
+	  	\begin{solution}
+	  	    No a row of zeros will not effect the third row of $EB$ like the previous problem.  The following illustration proves this.  
+	  	    	$\mb
+	  		    1 & 1 & 1 \\
+	  		    1 & 1 & 1 \\
+	  		    0 & 0 & 0 \\
+	  		\me
+	  		\mb
+	  		    0 & 0 & 0 \\
+	  		    0 & 0 & 0 \\
+	  		    1 & 1 & 1
+	  		\me_{E}=
+	  		\mb
+	  		    0 & 0 & 0 \\
+	  		    0 & 0 & 0 \\
+	  		    2 & 2 & 2
+	  		\me_{EB}$
+	  	    
+	  	\end{solution}
+	  \end{parts}
+
+
+	\question The product of three matrices $A, B$ and $C$ can be computed in any order. In other words $ABC = (AB)C = A(BC)$. One of the orders for multiplication often requires fewer calculations than the other. Suppose that $A$ is $m$ by $n$, $B$ is $n$ by $p$, and $C$ is $p$ by $q$.
+	
+	\begin{parts}
+		\part How many scalar products must be performed to compute $AB$? How many for $BC$?
+		\begin{solution}
+			 There is a fairly simple equation for finding the number of scalar products that must be performed multiplying matrices.  We are told that A is $(m\times n)$ B is $(n\times p)$ using these variables we can set up the equation to be solved. $m(n-1)p=AB$ we need to subtract one from n otherwise we would double count it.  Then we simply multiply the outer dimensions of the equation.  We will use this same equation to set up $BC$ B is defined as $(n\times p)$ and C is defined as $(p\times q)$. So the scalar product count for $(n\times p)(p\times q)$ is found using the equation $n(p-1)q$
+		\end{solution}
+		\part How many scalar products  must be performed to compute $(AB)C$? How many for $A(BC)$?
+		\begin{solution}
+			We will use the same equation above to solve for this problem as well. We know that when we multiply matrices the outer most dimensions become the size of the new matrix.  For example $(a\times b)(b\times c)$ the new matrix size would be $(a \times c)$.  We now have everything we need to solve this problem. We are told that A is $(m\times n)$ B is $(n\times p)$ and C is defined as $(p\times q)$, which tells us the resulting matrix of $AB$ will be $(m \times p)$ in size.  So $(AB)C=m(n-1)p+m(p-1)q$, and $A(BC)=n(p-1)q+m(n-1)q$.
+		\end{solution}
+		\part Let $\vec{u}, \vec{v}, \vec{w}$ be $n$-component vectors. Which requires fewer scalar products to compute, $(\vec{u}^T\vec{v})\vec{w}^T$ or $\vec{u}^T(\vec{v}\vec{w}^T)$
+		
+		\begin{solution}
+    		$(\vec{u}^T\vec{v})\vec{w}^T$ has fewer scalar products.  $\vec{u}^T\vec{v}$ will produce an $n\times 1 $ matrix.  Whereas $\vec{v}\vec{w}^T$ will produce a $n\times n$ matrix.
+		\end{solution}
+	\end{parts}
+\end{questions}
+
+
+
+\end{document}

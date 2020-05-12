@@ -1,0 +1,77 @@
+			Given $y=ax^2+bx+c$ we can use the given points to fill in the x and y variables then construct a matrix from them.
+			\newline
+			$a(-1)^2+b(-1)+c=\frac{1}{4}$
+			\newline
+			$a(1)^2+b(1)+c=\frac{1}{4}$
+			\newline
+			$a(2)^2+b(2)+c=1$
+			\newline
+			$a(3)^2+b(3)+c=2$
+			\newline,
+			we get, $\begin{bmatrix}
+			    1 & -1 & 1 \\
+			    1 & 1 & 1 \\
+			    4 & 2 & 1 \\
+			    9 & 3 & 1 \\
+			\end{bmatrix}
+			\begin{bmatrix}
+			    a \\ b \\ c
+			\end{bmatrix}=
+			\begin{bmatrix}
+			    \frac{1}{4} \\
+			    \frac{1}{4} \\
+			    1 \\
+			    2 \\
+			\end{bmatrix}$.
+			\newline
+			Using $A^TA\vec{x}=A^T\vec{b}$ we get, 
+			\newline
+			$
+			\begin{bmatrix}
+			    1 & 1 & 4 & 9 \\
+			    -1 & 1 & 2 & 3 \\
+			    1 & 1 & 1 & 1 \\
+			\end{bmatrix}
+			\begin{bmatrix}
+			    1 & -1 & 1 \\
+			    1 & 1 & 1 \\
+			    4 & 2 & 1 \\
+			    9 & 3 & 1 \\
+			\end{bmatrix}
+			\begin{bmatrix}
+			    a \\ b \\ c
+			\end{bmatrix}=
+			\begin{bmatrix}
+			    1 & 1 & 4 & 9 \\
+			    -1 & 1 & 2 & 3 \\
+			    1 & 1 & 1 & 1 \\
+			\end{bmatrix}
+			\begin{bmatrix}
+			    \frac{1}{4} \\
+			    \frac{1}{4} \\
+			    1 \\
+			    2 \\
+			\end{bmatrix}$
+			\newline
+			$\begin{bmatrix}
+			    99 & 35 & 15 \\
+			    35 & 15 & 5 \\
+			    15 & 5 & 4 \\
+			\end{bmatrix}
+			\begin{bmatrix}
+			    a \\ b \\ c
+			\end{bmatrix}=
+			\begin{bmatrix}
+			    22.5 \\ 8 \\ 3.5
+			\end{bmatrix}
+			$
+		    So,
+		    $99a +35b +15c = 22.5$
+		    \newline
+		    $35a+15b+5c=8$
+		    \newline
+		    $15a+5b+4c=3.5$
+		    \newline
+		    Therefore $\begin{tabular}{c} a=.21 \\ b=.0238 
+		    \\ c=.0568\end{tabular}$.
+		    Finally we get $y=.21x^2+.0238x+.0568$!

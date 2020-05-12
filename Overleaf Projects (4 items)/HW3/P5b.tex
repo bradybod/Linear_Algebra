@@ -1,0 +1,85 @@
+ We will use the matrix $A=\begin{bmatrix}
+                a & b & c \\
+                b & d & e \\
+                c & e & f
+                \end{bmatrix}$ which meets $A^T=A$ 
+                \newline
+                $\begin{bmatrix}
+                a & b & c \\
+                b & d & e \\
+                c & e & f
+                \end{bmatrix} = 
+                \begin{bmatrix}
+                a & 0 & 0 \\
+                0 & 0 & 0 \\
+                0 & 0 & 0
+                \end{bmatrix}
+                +
+                \begin{bmatrix}
+                0 & b & 0 \\
+                b & 0 & 0 \\
+                0 & 0 & 0
+                \end{bmatrix}
+                +
+                \begin{bmatrix}
+                0 & 0 & c \\
+                0 & 0 & 0 \\
+                c & 0 & 0
+                \end{bmatrix}
+                +
+                \begin{bmatrix}
+                0 & 0 & 0 \\
+                0 & d & 0 \\
+                0 & 0 & 0
+                \end{bmatrix}
+                +
+                \begin{bmatrix}
+                0 & 0 & 0 \\
+                0 & 0 & e \\
+                0 & e & 0
+                \end{bmatrix}
+                +
+                \begin{bmatrix}
+                0 & 0 & 0 \\
+                0 & 0 & 0 \\
+                0 & 0 & f
+                \end{bmatrix}
+               $
+               Since they are linearly independent they can form a basis.
+               \newline
+                $Span = \left( \begin{bmatrix}
+                a & 0 & 0 \\
+                0 & 0 & 0 \\
+                0 & 0 & 0
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                0 & b & 0 \\
+                b & 0 & 0 \\
+                0 & 0 & 0
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                0 & 0 & c \\
+                0 & 0 & 0 \\
+                c & 0 & 0
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                0 & 0 & 0 \\
+                0 & d & 0 \\
+                0 & 0 & 0
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                0 & 0 & 0 \\
+                0 & 0 & e \\
+                0 & e & 0
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                0 & 0 & 0 \\
+                0 & 0 & 0 \\
+                0 & 0 & f
+                \end{bmatrix} \right)$
+                $A=A^T$ for each of the matrices in the span. Since there are 6 matrices in the span the dimension is 6. Any linear combination of these would result in a symmetric matrix.

@@ -1,0 +1,325 @@
+\documentclass[]{exam}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[en-US, showdow]{datetime2}
+
+
+\title{Homework 6\\
+	%Due \DTMdate{2019-04-12}\\ %Add a % at the begining of the line to remove the due date from the title (or just delete this line entirely) 
+	%at 12:30 am
+	}
+\date{ \today %You can remove the first % in this line to show the current days date.
+	}
+\author{Brady Bodily%Your Name %You should probably change this to your actual name and remove the first %, at least if you want credit.
+	}
+\begin{document}
+\maketitle
+
+\printanswers %comment out this line to hide your answers.
+
+
+\begin{questions}
+
+		
+	\question Suppose that $A \vec{x} = \lambda\vec{x}$. Please prove the following. 
+	
+	\begin{parts}
+%--------------------------------------------------------------------
+		\part 	$\lambda^2$ is an eigenvalue of $A^2$.
+		\newline
+		Given $A \vec{x} = \lambda\vec{x}$ we can prove this with basic algebra.
+		\begin{center}
+		    $A^2 \vec{x}= \lambda^2\vec{x}$
+		    \newline
+		    $A^2 \vec{x}= AA\vec{x}$
+		    \newline
+		    $AA \vec{x} = A\lambda\vec{x}$
+		    \newline
+		    $A \lambda \vec{x} = \lambda A\vec{x}$
+		    \newline
+		    $\lambda A \vec{x} = \lambda\lambda\vec{x}$
+		    \newline
+		    $\lambda \lambda \vec{x} = \lambda^2\vec{x}$
+		    \newline
+		\end{center}
+		Therefore proving $\lambda^2$ is an eigenvalue of $A^2$.
+%--------------------------------------------------------------------
+		\part  $\lambda^{-1}$ is an eigenvalue of $A^{-1}$. (This means the eigenvalues of inverses are reciprocals!)
+		\newline
+		\begin{center}
+		    $A\vec{x}=\lambda\vec{x}$
+		    \newline
+		    $A^{-1}A\vec{x}=A^{-1}\lambda\vec{x}$
+		    \newline
+		    $I\vec{x}=A^{-1}\lambda\vec{x}$
+		    \newline
+		    $\vec{x}=A^{-1}\lambda\vec{x}$
+		    \newline
+		    $\lambda^{-1}\vec{x}=\lambda^{-1}A^{-1}\lambda\vec{x}$
+		    \newline
+		    $\lambda^{-1}\vec{x}=A^{-1}\vec{x}$
+		    \newline
+		\end{center}
+		Therefore proving $\lambda^{-1}$ is an eigenvalue of $A^{-1}$.
+
+%--------------------------------------------------------------------
+		\part $\lambda + k$ is an eigenvalue of $A + kI$. (So changing all the diagonals by $k$ shifts the eigenvalues by $k$.)
+		\newline
+		Using 1a and 1b we get the following.
+		\newline
+		\begin{center}
+		    $(A+KI)\vec{x}=A\vec{x}+KI\vec{x}$
+		    \newline
+		    $\lambda \vec{x}+K\vec{x}=(\lambda+K)\vec{x}$
+		    \newline
+		\end{center}
+		Therefore proving $\lambda + k$ is an eigenvalue of $A + kI$.
+	\end{parts}
+
+	\question Recall that the characteristic polynomial det$(A-\lambda I)$ can always be written $(\lambda_1 - \lambda)(\lambda_2 - \lambda) \cdots (\lambda_n - \lambda)$ where each $\lambda_i$ is a root of det$(A-\lambda I)$. Use this to prove that det$(A) = \lambda_1\lambda_2\cdots\lambda_n$.
+	\newline
+	In the case of $\lambda=0$ we get the following.
+	\begin{center}
+	    $det(A-0I)=(\lambda_1-0)(\lambda_2-0)...(\lambda_n-0)$
+	    \newline
+	    $det(A)=(\lambda_1)(\lambda_2)...(\lambda_n)$
+	    \newline
+	\end{center}
+	Therefore the statement is proved true.
+
+	\question Diagonalize the matrix $A$ below. Then use the diagonalization to prove the formula for $A^k$.
+	
+	\begin{align*}
+		A = \begin{bmatrix}
+		2 & -1 \\ -1 & 2
+		\end{bmatrix} & &
+		A^k = \frac{1}{2}\begin{bmatrix}
+		1 + 3^k & 1 - 3^k \\ 1 - 3^k & 1 + 3^k
+		\end{bmatrix}
+	\end{align*}
+	
+	\question One important theory in linear algebra is the Cayley-Hamilton Theorem. This theorem states that if $p(\lambda) = \det(A-\lambda I)$ is the characteristic polynomial for $A$, then $p(A)=0$. This is surprising because $\lambda$, which is a scalar, is replaced by the matrix $A$ in the polynomial and it evaluates to 0. 
+	
+	\begin{parts}
+%--------------------------------------------------------------------
+		\part Verify that the Cayley-Hamilton Theorem works for \[A= \begin{bmatrix}
+		a & b \\ 0 & d
+		\end{bmatrix}\]
+		by finding the characteristic polynomial for $A$ and replacing $\lambda$ with $A$, then showing the resulting expression gives the zero matrix.
+		\begin{solution}
+		\newline
+		First start by calculating the matrix $A-\lambda I$.  So we get,
+		\begin{center}
+		    $
+		    \begin{bmatrix}
+		    a & b \\ 0 & d
+		    \end{bmatrix}-
+		    \lambda
+		    \begin{bmatrix}
+		    1 & 0 \\ 0 & 1
+		    \end{bmatrix}=
+		    \begin{bmatrix}
+		    a-\lambda & b \\ 0 & d-\lambda
+		    \end{bmatrix}
+		   $
+		\end{center}.
+	    We can now take the determinate of the result.
+	    \newline
+	    \begin{center}
+	        $\begin{vmatrix}
+	        a-\lambda & b \\ 0 & d-\lambda
+	        \end{vmatrix}=
+	        (a-\lambda)(d-\lambda)(-b0)$
+	        \newline
+	        $(a-\lambda)(d-\lambda)=\lambda^2-a\lambda-d\lambda+ad$
+	        \newline
+	    \end{center}
+	    We can now plug A in for $\lambda_1$.
+	    \begin{center}
+	    $
+	        \begin{bmatrix}
+	            a & b \\ 0 & d
+	        \end{bmatrix}^2-
+	        a\begin{bmatrix}
+	            a & b \\ 0 & d
+	        \end{bmatrix}-
+	        d\begin{bmatrix}
+	            a & b \\ 0 & d
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	        \begin{bmatrix}
+	            a & b \\ 0 & d
+	        \end{bmatrix}
+	        \begin{bmatrix}
+	            a & b \\ 0 & d
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            a^2 & ab \\ 0 & ad(I)
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            ad & bd \\ 0 & d^2
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	        \begin{bmatrix}
+	            a^2 & ab+bd \\ 0 & d^2
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            a^2 & ab \\ 0 & ad(I)
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            ad & bd \\ 0 & d^2
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	        \begin{bmatrix}
+	            0 & ab+bd \\ 0 & d^2
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            0 & ab \\ 0 & ad(I)
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            ad & bd \\ 0 & d^2
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	        \begin{bmatrix}
+	            0 & ab+bd \\ 0 & d^2
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            0 & ab \\ 0 & ad(I)
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            ad & bd \\ 0 & d^2
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	        \begin{bmatrix}
+	            0 & bd \\ 0 & d^2
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            0 & 0 \\ 0 & ad(I)
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            ad & bd \\ 0 & d^2
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	        \begin{bmatrix}
+	            0 & 0 \\ 0 & 0
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            0 & 0 \\ 0 & ad(I)
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            ad & 0 \\ 0 & 0
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	     \begin{bmatrix}
+	            -ad & 0 \\ 0 & -ad
+	        \end{bmatrix}+ ad
+	        \begin{bmatrix}
+	        1&0\\0&1
+	        \end{bmatrix}
+	    $
+	    \newline
+	    $
+	    \begin{bmatrix}
+	            -ad & 0 \\ 0 & -ad
+	        \end{bmatrix}+
+	        \begin{bmatrix}
+	        ad&0\\0&ad
+	        \end{bmatrix}=0
+	    $
+	    \newline
+	    \end{center}
+	    \end{solution}
+	   
+%--------------------------------------------------------------------
+		\part Since the characteristic polynomial $\det(A-\lambda I)$ has roots $\lambda_1, \lambda_2, \ldots, \lambda_n$ it can be written as $(\lambda_1 - \lambda)(\lambda_2 - \lambda) \cdots (\lambda_n - \lambda)$. According to the Cayley-Hamilton Theorem substituting $A$ into this must give the zero matrix, so $(\lambda_1 I - A)(\lambda_2 I  - A) \cdots (\lambda_n I  - A) =0$. Assume that $A = S \Lambda S^{-1}$ and show that in this case $(\lambda_1 I  - A)(\lambda_2 I  - A) \cdots (\lambda_n I - A) =0$. (Hint: first argue that $\lambda_i I-A = S(\lambda_i I - \Lambda)S^{-1}$).
+		\begin{solution}
+		Given $A=S\Lambda S^{-1}$, we will start with $S(\lambda_i I-\Lambda)S^{-1}$.  From here we will distribute the $S$ and $S^{-1}$.
+		\begin{center}
+		    $(\lambda_i SI-S\Lambda)S^{-1}$
+		    \newline
+		    $(\lambda_i SIS^{-1}-S\Lambda S^{-1})=\lambda_i I-A$
+		    \newline
+		    $(\lambda_i I-A)(\lambda_2I-A)...(\lambda_n I-A)=0$
+		    \newline
+		\end{center}
+		Therefore proving the statement.
+		\end{solution}
+		
+	\end{parts}
+
+	\question Show that the eigenvectors of a symmetric matrix ($S=S^T$) can be chosen to be orthonormal using the argument in parts (a)-(c) below.
+
+\begin{parts}
+%--------------------------------------------------------------------
+	\part First, suppose $S\vec{x} = \lambda_1\vec{x}$ and $S\vec{y} = 0\vec{y}$ and $\lambda_1 \neq 0$. Argue that $\vec{x}$ and $\vec{y}$ are orthogonal in this case.
+	\begin{solution}
+	    Given $\lambda_1 \neq 0$, $S=S^T$, $C(S)=C(S^T), N(S)\perp C(S^T)$,
+	    \begin{center}
+	        $\vec{x}\epsilon(C(S)$
+	        \newline
+	        $\vec{y}\epsilon(S)$
+	        \newline
+	        $\lambda_2=0$        
+	        \newline
+	        $S\vec{x}=\lambda_1\vec{x}$ 
+	        \newline
+	        $S\vec{y}=0y$          
+	        \newline
+	        $\vec{x}\perp\vec{y}$
+	        \newline
+	        
+	    \end{center}
+	\end{solution}
+%--------------------------------------------------------------------
+	\part Now suppose that $S\vec{x} = \lambda_1\vec{x}$ and $S\vec{y} = \lambda_2\vec{y}$, where $\lambda_1 \ne \lambda_2$. Create a new matrix with eigenvalues that have been shifted by $-\lambda_2$ (You should use an earlier problem from this assignment to tell you how to create this new matrix). What do you know about the eigenvectors after this shift? Use part (a) to argue that $\vec{x}$ and $\vec{y}$ are orthogonal. 
+	\begin{solution}
+	    Using 1c it shows that if you shift a matrix by a value you also shift the eigenvalues without changing the eigenvectors.
+	    \begin{center}
+	        $(S-\lambda_2I)\vec{x}=(\lambda_1-\lambda_2)\vec{x}$
+	        \newline
+	        $(S-\lambda_2I)\vec{y}=(\lambda_1-\lambda_2)\vec{y}$
+	        \newline
+	    \end{center}
+	    Using 5a we see that the Right hand side of the equation goes to 0, so $\vec{x}\perp\vec{y}$
+	   
+	\end{solution}
+%--------------------------------------------------------------------	
+	\part Argue that for a repeated eigenvalue $\lambda_1$, the eigenvectors of $S$ corresponding to $\lambda_1$ can be chosen orthogonal.
+    \begin{solution}
+    Assuming S is diagonalizable, 5a, and 5b, prove that eigenvectors are orthonormal. Using grahmschmidt then we can force the eigenvalues to be orthonormal. $(A-\lambda I)\vec{x}=0$ we can use grahmschmidt to find orthonormal vectors.
+    \end{solution}
+\end{parts} 
+
+\question In the previous problem you proved part of the spectral theorem, which states: Every symmetric matrix can be diagonalized as $S = Q \Lambda Q^T$ where $\Lambda$ is a diagonal matrix of real eigenvalues and the columns of $Q$ are orthonormal. Verify the spectral theorem by using  \[S = \begin{bmatrix}
+1 & 2 \\ 2 & 4
+\end{bmatrix}\]
+ and finding a diagonalization of $S$ using an orthogonal matrix $Q$.
+\end{questions}
+
+
+
+
+
+\end{document}

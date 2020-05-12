@@ -1,0 +1,21 @@
+			To find $q_1$ we use $q_1=$ $v_1\over{|v_1|}$ to find $q_2$ we use $q_2=v_2-q_1^T v_2q_1$
+			\begin{gather*}
+			    q_1=\begin{bmatrix}4 \\ -4 \\ -2 \end{bmatrix}1/6 = \begin{bmatrix}2/3 \\ -2/3 \\ -1/3 \end{bmatrix} 
+			    \\
+			    v_2=\begin{bmatrix}1 \\ 5 \\ 1 \end{bmatrix}-\begin{bmatrix}2/3 & -2/3 & -1/3 \end{bmatrix} \begin{bmatrix}1 \\ 5 \\ 1 \end{bmatrix}\begin{bmatrix}2/3 \\ -2/3 \\ -1/3 \end{bmatrix}=\begin{bmatrix}3 \\ 3 \\ 0\end{bmatrix}
+			    \\
+			    q_2=v_2/|v_2|=\begin{bmatrix}1/\sqrt{2} \\ 1/\sqrt{2} \\ 0\end{bmatrix}
+			\end{gather*}
+			Per the fundamental theorem of linear algebra we know $N(A^T)\perp C(A)$. Using this we can solve for $N(A^T)$ using $A^T=\begin{bmatrix} 4 & -4 & -2 \\ 1 & 5 & 1\end{bmatrix}$ we get 
+			$rref(A^T)=R=
+			\begin{bmatrix} 
+			1 & 0 & -1/4 \\ 
+			0 & 1 & 1/4
+			\end{bmatrix}$ 
+			Using this matrix we can solve for the 
+			$N(A^T)=
+			\begin{bmatrix} 
+			1/4 \\ -1/4 \\ 1 
+			\end{bmatrix}$ 
+			which when normalized is the vector. $q_3$ \newline
+			$q_3 = \begin{bmatrix}\sqrt{2}/6 \\ -\sqrt{2}/6 \\ 2\sqrt{2}/3 \end{bmatrix}$

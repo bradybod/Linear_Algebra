@@ -1,0 +1,53 @@
+	\question  There is a convenient formula for the inverse of a $2\times 2$ matrix, as stated below. Prove that this formula works by forming the augmented matrix $[A~I]$ and performing Gauss-Jordan elimination on it. What must be true about $a,b,c,d$ for the inverse to exist? (Hint: This is easier if you get common denominators at each step - for example, don't leave $d-b\frac{c}{a}$ in an entry of the matrix, make it $\frac{ad-bc}{a}$).
+	\[ \text{If } A = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \text{ then } A^{-1} = \frac{1}{ad - bc}\begin{bmatrix} d & -b \\ -c & a \end{bmatrix} \]
+	
+	\begin{solution}
+
+\begin{center}
+    $\begin{bmatrix}
+            \begin{tabular}{cc|cc}
+		     a & b & 1 & 0 \\
+		     c & d & 0 & 1 \\
+		    \end{tabular}
+        \end{bmatrix}$
+    \newline
+    $\Downarrow$
+    \newline
+    $\begin{bmatrix}
+        \begin{tabular}{cc|cc}
+		     a & b & 1 & 0 \\
+		     c- $\frac{ca}{a}$ & d- $\frac{bc}{a}$ & -$\frac{c}{2}$ & 1 \\
+		\end{tabular}
+    \end{bmatrix}$
+    \newline
+   $\Downarrow$
+    \newline
+    $\begin{bmatrix}
+        \begin{tabular}{cc|cc}
+		     a & b & 1 & 0 \\
+		     0 & d-$\frac{bc}{a}$ & - $\frac{c}{2}$ & 1 \\
+        \end{tabular}
+    \end{bmatrix}$
+    \newline
+   $\Downarrow$
+    \newline
+    $\begin{bmatrix}
+        \begin{tabular}{cc|cc}
+		     a & $b-b\left(  \frac{d-\frac{bc}{a}}{d-\frac{bc}{a}} \right)$ 
+		     & $1- \left( - \frac{c}{a} \left( \frac{b}{d-\frac{bc}{a}} \right) \right)$ & $-\frac{b}{d-\frac{bc}{a}}$ \\
+		     0 & d-$\frac{bc}{a}$ & - $\frac{c}{2}$ & 1 
+		     
+        \end{tabular}
+    \end{bmatrix}$
+    \newline
+   $\Downarrow$
+    \newline
+    $\begin{bmatrix}
+        \begin{tabular}{cc|cc}
+		     1 & 0 & $\frac{1}{a} + \frac{cb}{a(ad-bc)}$ & -$\frac{b}{ad - bc}$ \\
+		     0 & 1 & $\frac{- \frac{c}{a}} {d-\frac{bc}{a}}$ & $\frac{1}{d-\frac{bc}{a}}$
+        \end{tabular}
+    \end{bmatrix}$
+    \end{center}
+	\end{solution}
+	

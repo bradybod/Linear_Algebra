@@ -1,0 +1,35 @@
+$\begin{bmatrix} \begin{tabular}{cccc|c}
+		1 & 3 & 1 & 2 & 1 \\
+		2 & 6 & 4 & 8 & 3 \\
+		0 & 0 & 2 & 4 & 1 \\
+		\end{tabular} \end{bmatrix}
+		\xrightarrow{R_2-2R_1}
+		\begin{bmatrix} \begin{tabular}{cccc|c}
+		1 & 3 & 1 & 2 & 1 \\
+		0 & 0 & 2 & 4 & 1 \\
+		0 & 0 & 2 & 4 & 1 \\
+		\end{tabular} \end{bmatrix}
+		\xrightarrow{R_3-R_2}
+		\begin{bmatrix} \begin{tabular}{cccc|c}
+		1 & 3 & 1 & 2 & 1 \\
+		0 & 0 & 2 & 4 & 1 \\
+		0 & 0 & 0 & 0 & 0 \\
+		\end{tabular} \end{bmatrix}$.
+		We only have 2 columns with pivots after elimination the remaining two columns are our free variables. We can now solve for the $N(A)$,
+		\newline
+	    $\begin{tabular}{ccccc}
+		x+3y+z+2t=0 & Given & y=1 & then & x=-3 \\ 
+		 & & t=0 &  & z=0 \\
+		2z+4t=0 & Given & y=0 & then & x=1 \\ 
+		 & & t=1 &  & z=-2 \end{tabular}$.
+		 \newline
+		 So $N(A)=Span \left( 
+		 \begin{bmatrix} -3 \\ 1 \\ 0 \\ 0 \\ \end{bmatrix}, 
+		 \begin{bmatrix} 1 \\ 0 \\ -2 \\ 1 \end{bmatrix}\right)$
+		\newline
+		We can now solve for $x_{particular}=\begin{bmatrix} 1/2 \\ 0 \\ 1/2 \\ 0 \end{bmatrix}$.  
+		\newline
+		The complete solution is,
+		$\begin{bmatrix} 1/2 \\ 0 \\ 1/2 \\ 0 \end{bmatrix} + \alpha \begin{bmatrix} -3 \\ 1 \\ 0 \\ 0 \\ \end{bmatrix} + \beta \begin{bmatrix} 1 \\ 0 \\ -2 \\ 1 \end{bmatrix}$
+		\newline
+		Since $\alpha$ and $\beta$ can be any number we can have infinite solutions.

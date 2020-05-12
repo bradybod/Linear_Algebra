@@ -1,0 +1,316 @@
+\question Recall the definition of a vector space given in the meeting notes.
+	\begin{parts}
+		\item \S 3.1 \# 2. Consider the set $V$ of vectors in $\mathbb{R}^2$ with the following addition and scalar multiplication:
+		\[ \begin{bmatrix}
+			x_1 \\ x_2
+		\end{bmatrix} +
+		\begin{bmatrix}
+			y_1 \\ y_2
+		\end{bmatrix}
+		=
+		\begin{bmatrix}
+			x_1 + y_1 \\ x_2 + y_2
+		\end{bmatrix}, \qquad
+		\alpha \begin{bmatrix}
+			x_1 \\ x_2
+		\end{bmatrix} =
+		\begin{bmatrix}
+		\alpha x_1 \\ 0
+		\end{bmatrix}. \]
+		With these operations, is $V$ a vector space over $\mathbb{R}$?
+		If so, prove it by showing that all 8 conditions are satisfied.
+		If not, explain which of the 8 conditions is violated.
+		
+		\begin{solution}
+		    $V$ is not a vector space over $\mathbb{R}$ So no.  Condition 5 fails, 
+		    \begin{center}
+		    $
+		    1\Vec{x} \ne \Vec{x}
+		    $
+		    \end{center}
+		\end{solution}
+		
+		\part \S 3.1 \# 4. Show that the set $\mathcal{M}_2$ of $2 \times 2$ matrices with entries from $\mathbb{R}$ is a vector space over $\mathbb{R}$. The matrix $A = \begin{smallbmatrix} 2 & -2 \\ 2 & -2 \end{smallbmatrix}$ is a vector in this space. What matrices are in the \textbf{smallest} subspace containing $A$?
+		
+		\begin{solution}
+			1:\\
+			\begin{center}
+			   $ \begin{bmatrix}
+			        a & b \\
+			        c & d \\
+		        \end{bmatrix}
+		        +
+		        \begin{bmatrix}
+			        e & f \\
+			        j & k \\
+		        \end{bmatrix}
+		        =
+		        \begin{bmatrix}
+			        a+e & b+f \\
+			        c+j & d+k \\
+		        \end{bmatrix}
+		        =
+		        \begin{bmatrix}
+			        e & f \\
+			        j & k \\
+		        \end{bmatrix}
+		        +
+		        \begin{bmatrix}
+			        a & b \\
+			        c & d \\
+		        \end{bmatrix}
+			$
+			\end{center}
+		2:\\
+		\begin{center}
+		$
+		\left(
+		    \begin{bmatrix}
+			    x_1 & x_2 \\
+			    x_3 & x_4 \\
+		    \end{bmatrix}
+		        +
+		    \begin{bmatrix}
+			    y_1 & y_2 \\
+			    y_3 & y_4 \\
+		    \end{bmatrix}
+		\right)
+		    \begin{bmatrix}
+			    z_1 & z_2 \\
+			    z_3 & z_4 \\
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+			    x_1+y_1+z_1 & x_2+y_2+z_2 \\
+			   x_3+y_3+z_3 & x_4+y_4+z_4 \\
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+			    x_1 & x_2 \\
+			    x_3 & x_4 \\
+		    \end{bmatrix}
+		        +
+		\left(
+		    \begin{bmatrix}
+			    y_1 & y_2 \\
+			    y_3 & y_4 \\
+		    \end{bmatrix}
+		    +
+		    \begin{bmatrix}
+			    z_1 & z_2 \\
+			    z_3 & z_4 \\
+		    \end{bmatrix}
+		\right)
+		$
+		\end{center}
+		3: \\ The $\Vec{0} = \begin{bmatrix}
+			    0 & 0 \\
+			    0 & 0 \\
+		    \end{bmatrix}
+            $
+		
+		4:\\
+		\begin{center}
+		$
+		    \begin{bmatrix}
+			    x_1 & x_2 \\
+			    x_3 & x_4 \\
+		    \end{bmatrix}
+		    +
+		    \begin{bmatrix}
+			    -x_1 & -x_2 \\
+			    -x_3 & -x_4 \\
+		    \end{bmatrix}
+		    = 0
+		    $
+		\end{center}
+
+		5:\\
+		\begin{center}$
+		    1\begin{bmatrix}
+			    x_1 & x_2 \\
+			    x_3 & x_4 \\
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+			    x_1 & x_2 \\
+			    x_3 & x_4 \\
+		    \end{bmatrix}
+		    $
+		\end{center}
+				
+
+		6:\\
+		\begin{center}
+		$
+		\left(
+        \alpha \beta
+        \right) 
+        \begin{bmatrix}
+			    x_1 & x_2 \\
+			    x_3 & x_4 \\
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+			    \alpha \beta x_1 & \alpha \beta x_2 \\
+			    \alpha \beta x_3 & \alpha \beta x_4 \\
+		    \end{bmatrix}
+		    =
+		    \alpha
+		    \begin{bmatrix}
+			    \beta x_1 & \beta x_2 \\
+			    \beta x_3 & \beta x_4 \\
+		    \end{bmatrix}
+		    $
+		\end{center}
+
+		7:\\
+		\begin{center}
+		$
+		    \alpha \left( 
+		        \begin{bmatrix}
+			    x_1 & x_2 \\
+			    x_3 & x_4 \\
+		    \end{bmatrix}
+		    +
+		    \begin{bmatrix}
+			    y_1 & y_2 \\
+			    y_3 & y_4 \\
+		    \end{bmatrix}
+		    \right)
+		    =
+		    \begin{bmatrix}
+			    \alpha x_1 + \alpha y_1 & \alpha x_2 + \alpha y_2 \\
+			    \alpha x_3 + \alpha y_3 & \alpha x_4 + \alpha y_4 \\
+		    \end{bmatrix}
+		    =
+		    \alpha
+		    \begin{bmatrix}
+			    x_1 & x_2 \\
+			    x_3 & x_4 \\
+		    \end{bmatrix}
+		    +
+		    \alpha
+		    \begin{bmatrix}
+			    y_1 & y_2 \\
+			    y_3 & y_4 \\
+		    \end{bmatrix}
+		    $
+		\end{center}
+		
+		8:
+		\begin{center}
+		$
+		\left(
+		\alpha + \beta
+		\right)
+		\begin{bmatrix}
+			    x_1 & x_2 \\
+			    x_3 & x_4 \\
+		    \end{bmatrix}
+		    =
+		    \begin{bmatrix}
+			    \alpha x_1 + \beta x_1 &  \alpha x_2 + \beta x_2 \\
+			    \alpha x_3 + \beta x_3 & \alpha x_4 + \beta x_4 \\
+		    \end{bmatrix}
+		    =
+		    \alpha 
+		    \begin{bmatrix}
+			    x_1 & x_2 \\
+			    x_3 & x_4 \\
+		    \end{bmatrix}
+		    +
+		    \beta\begin{bmatrix}
+			    x_1 & x_2 \\
+			    x_3 & x_4 \\
+		    \end{bmatrix}
+		    $
+		\end{center}
+		
+		
+		There are infinitely many "smallest" subspaces of $A$ any scalar multiple of $A$ are in the subspace
+		\end{solution}
+		
+		
+		\part Show that the set $\mathbb{C}=\{a+bi : a,b \in \mathbb{R}\}$ of complex numbers is a vector space over $\mathbb{R}$.
+		
+		\begin{solution}
+		1:
+		\newline
+			\begin{center}
+			   $ (a+bi)+(c+di)=(a+c+(b+d)i)=(c+di)+(a+bi)
+			   $
+			\end{center}
+		2:
+		\newline
+		\begin{center}
+		$
+		((a+bi)+c+di))+(x+yi)=(a+c+x+(b+d+y)i)= (a+bi)+((c+di)+(x+yi))
+		$
+		\end{center}
+		3:
+	    \newline
+	    \begin{center}
+	    $
+	        \Vec{0} = 0+0i=0$\\
+	        $
+	        (x+yi)+0 = (x+yi)
+	    $
+	    \end{center}
+	    4:
+	    \newline
+	    \begin{center}
+	    $
+	    (x+yi)+(-x-yi)=0d
+	    $
+	    \end{center}
+	    5:
+	    \newline
+	    \begin{center}
+	    $
+	    1(x+yi)=x+yi
+	    $
+	    \end{center}
+	    6:
+	    \newline
+	    \begin{center}
+	    $
+	    (\alpha \beta)(x+yi)=(\alpha \beta x + \alpha \beta yi) = \alpha ( \beta x + \beta yi)
+	    $
+	    \end{center}
+	    7:
+	    \newline
+	    \begin{center}
+	    $
+	    x((a+bi)+(c+di))=(x(a+c)+x(b+d)i)=x(a+bi)+x(c+di))
+	    $
+	    \end{center}
+	    8:
+	    \newline
+	    \begin{center}
+	    $
+	    (\alpha + \beta)(x+yi)=\alpha x + \alpha yi + \beta x + \beta yi = \alpha ( x+yi)+ \beta(x+yi)
+	    $
+	    \end{center}
+		\end{solution}
+		
+		\part Is the set $\mathbb{R}$ a vector space over $\mathbb{C}$?
+		If so, prove it by showing that all 8 conditions are satisfied.
+		If not, explain which of the 8 conditions is violated.
+		
+		\begin{solution}
+			Scalar multiplication fails. Complex scalars will leave the vector space.
+			\begin{center}
+			$
+			    1(1+i)=1+i \notin \mathds{R}
+			    $
+			\end{center}
+			
+		\end{solution}
+		
+		\part Why doesn't it make sense to talk about a vector space over $\mathbb{Z}$, the set of integers?
+		
+		\begin{solution}
+			Integer division...if you divide two integers you are not guaranteed an integer value return ie 7/3
+		\end{solution}
+	\end{parts}

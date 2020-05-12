@@ -1,0 +1,51 @@
+	For $(A^T = -A)$ to be true then the diagonal has to be 0's. So,
+				\newline
+				$
+				\begin{bmatrix}
+				0 & a & b \\
+				-a & 0 & c \\
+				-b & -c & 0
+				\end{bmatrix}
+				=
+				\begin{bmatrix}
+				0 & a & 0 \\
+				-a & 0 & 0 \\
+				0 & 0 & 0
+				\end{bmatrix}
+				+
+				\begin{bmatrix}
+				0 & 0 & b \\
+				0 & 0 & 0 \\
+				-b & 0 & 0
+				\end{bmatrix}
+				+
+				\begin{bmatrix}
+				0 & 0 & 0 \\
+				0 & 0 & c \\
+				0 & -c & 0
+				\end{bmatrix}
+				$
+				Since they are linearly independent then span is, 
+				\newline
+				$
+				Span \left(
+				\begin{bmatrix}
+				0 & a & 0 \\
+				-a & 0 & 0 \\
+				0 & 0 & 0
+				\end{bmatrix}
+				,
+				\begin{bmatrix}
+				0 & 0 & b \\
+				0 & 0 & 0 \\
+				-b & 0 & 0
+				\end{bmatrix}
+				,
+				\begin{bmatrix}
+				0 & 0 & 0 \\
+				0 & 0 & c \\
+				0 & -c & 0
+				\end{bmatrix}
+				\right)
+				$
+				Since there are 3 matrices in the span the dimension is 3, and $(A^T = -A)$ is true for each of the matrices in the span. Any linear combination of these matrices would result in a symmetric matrix.

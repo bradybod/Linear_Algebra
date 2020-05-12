@@ -1,0 +1,74 @@
+	Given, $C(A)=Span \left( 
+	\begin{bmatrix}
+	1 \\ 2 \\ 4
+	\end{bmatrix}
+	,
+	\begin{bmatrix}
+	2 \\ 2 \\ 1
+	\end{bmatrix}
+	\right)$
+	and 
+	$C(A^T)=Span \left( 
+	\begin{bmatrix}
+	1 \\ 0
+	\end{bmatrix}
+	,
+	\begin{bmatrix}
+	1 \\ 1
+	\end{bmatrix}
+	\right)$
+	We can construct the outer product from the column space of $C(A)$ and $C(A^T)$. So,
+	\newline
+	$
+	\begin{bmatrix}
+	1 \\ 2 \\ 4
+	\end{bmatrix}
+	\begin{bmatrix}
+	1 & 0
+	\end{bmatrix}
+	+
+	\begin{bmatrix}
+	2 \\ 2 \\ 1
+	\end{bmatrix}
+	\begin{bmatrix}
+	1 & 1
+	\end{bmatrix}
+	=A=
+	\begin{bmatrix}
+	1 & 0 \\
+	2 & 0 \\
+	4 & 0
+	\end{bmatrix}
+	+
+	\begin{bmatrix}
+	2 & 2 \\
+	2 & 2 \\
+	1 & 1
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	3 & 2 \\
+	4 & 2 \\
+	5 & 1
+	\end{bmatrix}
+	$
+	\newline
+	Using the outer product vectors we can create 2 matrices and verify that the product equals $A$.
+	$
+	\begin{bmatrix}
+	1 & 2 \\
+	2 & 2 \\
+	4 & 1
+	\end{bmatrix}
+	\begin{bmatrix}
+	1 & 0 \\
+	1 & 1 \\
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	3 & 2 \\
+	4 & 2 \\
+	5 & 1
+	\end{bmatrix}
+	=A
+	$

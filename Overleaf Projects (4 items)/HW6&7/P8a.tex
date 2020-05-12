@@ -1,0 +1,142 @@
+\newline
+		First start by calculating the matrix $A-\lambda I$.  So we get,
+		\begin{center}
+		    $
+		    \begin{bmatrix}
+		    a & b \\ 0 & d
+		    \end{bmatrix}-
+		    \lambda
+		    \begin{bmatrix}
+		    1 & 0 \\ 0 & 1
+		    \end{bmatrix}=
+		    \begin{bmatrix}
+		    a-\lambda & b \\ 0 & d-\lambda
+		    \end{bmatrix}
+		   $
+		\end{center}.
+	    We can now take the determinate of the result.
+	    \newline
+	    \begin{center}
+	        $\begin{vmatrix}
+	        a-\lambda & b \\ 0 & d-\lambda
+	        \end{vmatrix}=
+	        (a-\lambda)(d-\lambda)(-b0)$
+	        \newline
+	        $(a-\lambda)(d-\lambda)=\lambda^2-a\lambda-d\lambda+ad$
+	        \newline
+	    \end{center}
+	    We can now plug A in for $\lambda_1$.
+	    \begin{center}
+	    $
+	        \begin{bmatrix}
+	            a & b \\ 0 & d
+	        \end{bmatrix}^2-
+	        a\begin{bmatrix}
+	            a & b \\ 0 & d
+	        \end{bmatrix}-
+	        d\begin{bmatrix}
+	            a & b \\ 0 & d
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	        \begin{bmatrix}
+	            a & b \\ 0 & d
+	        \end{bmatrix}
+	        \begin{bmatrix}
+	            a & b \\ 0 & d
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            a^2 & ab \\ 0 & ad(I)
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            ad & bd \\ 0 & d^2
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	        \begin{bmatrix}
+	            a^2 & ab+bd \\ 0 & d^2
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            a^2 & ab \\ 0 & ad(I)
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            ad & bd \\ 0 & d^2
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	        \begin{bmatrix}
+	            0 & ab+bd \\ 0 & d^2
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            0 & ab \\ 0 & ad(I)
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            ad & bd \\ 0 & d^2
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	        \begin{bmatrix}
+	            0 & ab+bd \\ 0 & d^2
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            0 & ab \\ 0 & ad(I)
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            ad & bd \\ 0 & d^2
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	        \begin{bmatrix}
+	            0 & bd \\ 0 & d^2
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            0 & 0 \\ 0 & ad(I)
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            ad & bd \\ 0 & d^2
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	        \begin{bmatrix}
+	            0 & 0 \\ 0 & 0
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            0 & 0 \\ 0 & ad(I)
+	        \end{bmatrix}-
+	        \begin{bmatrix}
+	            ad & 0 \\ 0 & 0
+	        \end{bmatrix}
+	        + ad
+	    $
+	    \newline
+	    $
+	     \begin{bmatrix}
+	            -ad & 0 \\ 0 & -ad
+	        \end{bmatrix}+ ad
+	        \begin{bmatrix}
+	        1&0\\0&1
+	        \end{bmatrix}
+	    $
+	    \newline
+	    $
+	    \begin{bmatrix}
+	            -ad & 0 \\ 0 & -ad
+	        \end{bmatrix}+
+	        \begin{bmatrix}
+	        ad&0\\0&ad
+	        \end{bmatrix}=0
+	    $
+	    \newline
+	    \end{center}

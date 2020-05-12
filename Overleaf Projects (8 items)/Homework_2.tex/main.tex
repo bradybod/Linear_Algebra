@@ -1,0 +1,41 @@
+\documentclass[]{exam}
+\usepackage{tikz}
+\usepackage{arydshln}
+\usepackage{gensymb}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[en-US, showdow]{datetime2}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newenvironment{smallbmatrix}
+{\left[\begin{smallmatrix}}
+{\end{smallmatrix}\right]}
+
+
+\title{Homework 2\\
+	Due \DTMdate{2020-02-07} %Add a % at the begining of the line to remove the due date from the title (or just delete this line entirely) 
+	}
+\date{ %\today %You can remove the first % in this line to show the current days date.
+	}
+\author{Name: Brady Bodily \\
+		\footnotesize Collaborators: People you worked with  \\
+		\footnotesize Recitation Section: \circled{501}/505/506
+		%You should probably change this to your actual name, at least if you want credit.
+		}
+\begin{document}
+\maketitle
+
+\printanswers %comment out this line to hide your answers.
+
+\begin{questions}
+    \input{problem1}
+	\input{problem2}
+	\input{problem3}
+	\input{problem4}
+	\input{problem5}
+	\input{problem6}
+	\input{problem7}
+	
+\end{questions}
+\end{document}

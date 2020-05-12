@@ -1,0 +1,135 @@
+\documentclass[]{exam}
+\usepackage{ dsfont }
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[en-US, showdow]{datetime2}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{mathabx}
+\usepackage{multicol,enumitem}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\newenvironment{smallbmatrix}
+{\left[\begin{smallmatrix}}
+{\end{smallmatrix}\right]}
+
+
+\title{Homework 3\\
+	Due \DTMdate{2020-03-13} %Add a % at the begining of the line to remove the due date from the title (or just delete this line entirely) 
+	}
+\date{ %\today %You can remove the first % in this line to show the current days date.
+	}
+\author{Name: Brady Bodily  \\
+		\footnotesize Collaborators: Mitch Pound, Danny Clyde, Jaxon Willard  \\
+		\footnotesize Recitation Section: \circled{504} /505/506
+		%You should probably change this to your actual name, at least if you want credit.
+		}
+\begin{document}
+\maketitle
+
+\printanswers %comment out this line to hide your answers.
+
+\begin{questions}
+	\question Suppose $A$ is a $6 \times 4$ matrix. What are all possible dimensions of each of the four fundamental subspaces associated with $A$?
+	What are the possible values for the rank of $A$? 
+	For each possible rank, explain how many solutions an equation $A\vec{x}=\vec{b}$ might have.
+	
+	\begin{solution}
+	\input{P1}
+	\end{solution}
+	
+	\question We are years into the future and every single one of you has decided to pursue mathematics and is teaching their own Linear Algebra class. Congratulations! You want to make a homework problem that tests the following objectives:
+	\begin{itemize}
+		\item Students will complete Gaussian elimination with explanation.
+		\item Students will identify the pivots of a matrix.
+		\item Students will find bases for each of the four fundamental subspaces.
+		\item Students will determine whether a matrix is invertible.
+		\item Students will find the complete solution to a system $A\vec{x}=\vec{b}$.
+	\end{itemize}
+	In addition to testing these objectives, you'd like the computations to be fairly friendly to the students (results should mostly consist of integers). Please write a homework question for your students. (Note: For objective 3 above, the four fundamental subspaces should all be somewhat interesting; we don't want the nullspace to only have the zero vector in it, for example). Include a rubric for your homework problem. Feel free to be creative!
+	
+	\begin{solution}
+	\input{P2}
+	\end{solution}
+	
+	\question \S 3.3 \# 34. Suppose that $A$ is a $3 \times 4$ matrix and $\{(2,3,1,0)^\intercal\}$ is a basis for $N(A)$. Please answer the following.
+	\begin{enumerate}[label=(\alph*)]
+		\item What is the rank of $A$ and the complete solution to $A\vec{x}=\vec{0}$?
+		\item What is the row reduced echelon form $R$ of $A$?
+		\item Explain why $A\vec{x}=\vec{b}$ can be solved for all $\vec{b}$.
+	\end{enumerate}
+	
+	\begin{solution}
+	\input{P3}
+	\end{solution}
+	
+	\question \S 8.1 \# 3 Determine whether each of the following is a linear transformation $\mathbb{R}^2 \to \mathbb{R}^2$ and explain.
+	
+	\begin{multicols}{2}
+	\begin{enumerate}[label=(\alph*)]
+	\item $T((v_1,v_2)^\intercal) = (v_2,v_1)^\intercal$
+	\item $T((v_1,v_2)^\intercal) = (v_1,v_1)^\intercal$
+	\item $T((v_1,v_2)^\intercal) = (0,v_1)^\intercal$
+	\item $T((v_1,v_2)^\intercal) = (0,1)^\intercal$
+	\item $T((v_1,v_2)^\intercal) = (v_1-v_2,v_1-v_2)^\intercal$
+	\item $T((v_1,v_2)^\intercal) = (v_1v_2,0)^\intercal$
+	\end{enumerate}
+	\end{multicols}
+	
+	\begin{solution}
+	\input{P4}
+	\end{solution}
+	
+	\question The definition of a linear transformation does not say anything about the zero vector, yet I've mentioned that a linear transformation must send the zero vector in the domain to the zero vector in the codomain. Use the definition to show that $T(\vec{0}) = \vec{0}$ for any linear transformation $T$.
+	
+	\begin{solution}
+	\input{P5}
+	\end{solution}
+	
+	\question Find the matrix representation of each linear transformation.
+	
+	\begin{enumerate}[label=(\alph*)]
+	
+\input{P6}	
+	\end{enumerate}
+	
+	\question \textbf{The Crazy Vector Space Returns.} Recall the ``crazy vector space'', which we will denote by $V$, from HW 2. As a reminder, the vectors in $V$ are $2 \times 1$ matrices, with vector addition and scalar multiplication defined by
+	\[
+	\begin{bmatrix}
+	x_1 \\ x_2
+	\end{bmatrix}
+	\oplus
+	\begin{bmatrix}
+	y_1 \\ y_2
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	x_1+y_1+1 \\ x_2+y_2+1
+	\end{bmatrix},
+	\qquad
+	\alpha
+	\odot
+	\begin{bmatrix}
+	x_1 \\ x_2
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	\alpha x_1 + \alpha - 1 \\
+	\alpha x_2 + \alpha - 1
+	\end{bmatrix}.
+	\]
+	Also recall that the zero vector in $V$ is $\begin{smallbmatrix} -1 \\ -1 \end{smallbmatrix}$.
+	
+	\begin{enumerate}[label=(\alph*)]
+    \input{P7}
+		
+	\end{enumerate}
+	
+\end{questions}
+
+
+
+
+
+\end{document}

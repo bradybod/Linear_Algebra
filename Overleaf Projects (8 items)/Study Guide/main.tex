@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}\setlist[description]{font=\textendash\enskip\scshape\bfseries}
+\usepackage{tikz}
+\usepackage{arydshln}
+\usepackage{gensymb}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[en-US, showdow]{datetime2}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\title{Study Guide}
+\author{brady.bodily1 }
+\date{February 2019}
+
+\begin{document}
+\begin{description}[font=$\bullet$\scshape\bfseries]
+\item[Linear independence] you cant make any of the others from existing. Av+Bv+...Wv=0 Only when A, B, ..., W = 0
+\item[Linear dependence] You can make one out of the other. You can use any linear combination of the others to get to 
+    the zero vector.
+\item[Basis] must be linearly independent and uses the minimum amount of vectors
+\item[Span] must be linearly independent and doesn't have to be the min amt of vectors to do so
+\item[Original Matrix]\begin{bmatrix} \begin{tabular}{cc|cc}
+		     a & b & w & x \\
+		     c & d & y & z \\
+		\end{tabular} \end{bmatrix} 
+\item[Dot Product]
+
+\item[Column multiplication]
+$= 
+		\begin{bmatrix}w \begin{bmatrix}a\\c \end{bmatrix}+v\begin{bmatrix}b\\d \end{bmatrix} & x\begin{bmatrix}a\\c \end{bmatrix}+z\begin{bmatrix}b\\d \end{bmatrix} \end{bmatrix}$
+\item[Row Method]
+$\begin{bmatrix}a \begin{bmatrix}w&x \end{bmatrix}+b\begin{bmatrix}y&z \end{bmatrix} \\ c\begin{bmatrix}w&x \end{bmatrix}+d\begin{bmatrix}y&z \end{bmatrix} \end{bmatrix}$
+\item[Outer Product] $\begin\bmatrix \begin{bmatrix}a\\c\end{bmatrix}\begin{bmatrix}w&x\end{bmatrix}
+\end{bmatrix}$
+\end{description}    
+
+
+
+
+		
+\maketitle
+
+\section{Introduction}
+
+\end{document}

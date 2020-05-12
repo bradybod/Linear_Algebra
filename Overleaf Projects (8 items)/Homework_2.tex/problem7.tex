@@ -1,0 +1,174 @@
+\question \S 3.2 \# 15-20. Construct matrices with the following properties, if possible. If it is not possible to construct a matrix with the given property explain why it is impossible. There are many correct answers for each of these problems. Your work must make it clear that the matrix has the desired property, if the grader has to do any work to verify the matrix is correct you will not receive credit. Please ask Tyler, Bryce, or Zengyan for clarification if you are not clear on how to show the matrix you propose has the desired properties.
+	
+	
+	\begin{parts}
+		\part Construct a matrix for which $N(A)$ is all linear combinations of $(2,2,1,0)$ and $(3,1,0,1)$.
+		\begin{solution}
+			$AN(A) = 0$ So, using a matrix in RREF multiplied by the nullspace vectors as a matrix we can find $A$
+			\\
+			\begin{center}
+			$A N(A)=0$
+			\\
+			$
+			\begin{bmatrix}
+			1 & 0 & x_1 & x_2 \\
+			0 & 1 & x_3 & x_4
+			\end{bmatrix}
+			\begin{bmatrix}
+			2 & 3 \\
+			2 & 1 \\
+			1 & 0 \\
+			0 & 1 \\
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+			0 & 0 \\
+			0 & 0
+			\end{bmatrix}
+			$
+			\\
+			$A = 
+			\begin{bmatrix}
+			1 & 0 & -2 & -3 \\
+			0 & 1 & -2 & -1
+			\end{bmatrix}$
+			\end{center}
+		\end{solution}
+		\part Construct $A$ so that $N(A)$ is all multiples of $(4,3,2,1)$. What is the rank of $A$?
+		\begin{solution}
+			$A$ will have 3 pivots rank = 3 and will have 4 columns.
+			\\
+			\begin{center}
+			    $AN(A)=0$
+			    \\
+			    $\begin{bmatrix}
+			    1 & 0 & 0 & x_1 \\
+			    0 & 1 & 0 & x_2 \\
+			    0 & 0 & 1 & x_3 \\
+			    \end{bmatrix}
+			    \begin{bmatrix}
+			    4 \\
+			    3 \\
+			    2 \\
+			    1 \\
+			    \end{bmatrix}
+			    = 0
+			    $
+			    \\
+			    $
+			    A=
+			    \begin{bmatrix}
+			    1 & 0 & 0 & -4 \\
+			    0 & 1 & 0 & -3 \\
+			    0 & 0 & 1 & -2 \\
+			    \end{bmatrix}
+			    $
+			\end{center}
+		\end{solution}
+		\part Construct a matrix whose column space contains $(1,1,5)$ and $(0,3,1)$ and whose nullspace contains $(1,1,2)$.
+		\begin{solution}
+		\begin{center}
+		$
+			\begin{bmatrix}
+			1 & 0 & x_1 \\
+			1 & 3 & x_2 \\
+			5 & 1 & x_3
+			\end{bmatrix}
+			\begin{bmatrix}
+			1 \\ 1 \\ 2
+			\end{bmatrix}
+			= 0
+		$
+		\\
+		$
+		x_1 = \frac{-1}{2}
+		$
+		\\
+		$
+		x_2 = -2
+		$
+		\\
+		$
+		x_3 = -3
+		$
+		\\
+		$A = 
+		\begin{bmatrix}
+		1 & 0 & \frac{-1}{2} \\
+		1 & 3 & -2 \\
+		5 & 1 & -3
+		\end{bmatrix}$
+		\end{center}
+		\end{solution}
+		\part Construct a matrix whose column space contains $(1,1,0)$ and $(0,1,1)$ and whose nullspace contains $(1,0,1)$ and $(0,0,1)$.
+		\begin{solution}
+			This is impossible the nullspace vectors are not linearly dependent meaning there are two free variables and as this is a $3x3$ matrix and provided are two linearly independent column space vectors the size would need to be at least $4x4$
+		\end{solution}
+		\part Construct a matrix whose column space contains $(1,1,1)$ and whose nullspace is all multiples of $(1,1,1,1)$.
+		\begin{solution}
+		\begin{center}
+		$
+			\begin{bmatrix}
+			 1 & 0 & 0 & x_1 \\
+			 0 & 1 & 0 & x_2 \\
+			 0 & 0 & 1 & x_3 \\
+			\end{bmatrix}
+			\begin{bmatrix}
+			1\\1\\1\\1
+			\end{bmatrix}
+			=
+			0
+			$
+			\\
+			$
+			A =
+			\begin{bmatrix}
+			 1 & 0 & 0 & -1 \\
+			 0 & 1 & 0 & -2 \\
+			 0 & 0 & 1 & -2 \\
+			\end{bmatrix}
+			$
+			\end{center}
+		\end{solution}
+		\part Construct a 2 by 2 matrix whose nullspace equals its column space.
+		\begin{solution}
+		$
+		A=
+		    \begin{bmatrix}
+			 1 & 1\\
+			 -1 & -1\\
+			\end{bmatrix}
+			$
+			\\
+			$C(A) =
+			\begin{bmatrix}
+			1\\-1
+			\end{bmatrix}
+			$
+			\\
+			$N(A) =
+			\begin{bmatrix}
+			1\\-1
+			\end{bmatrix}$
+			\\
+			Proof:
+			\begin{center}
+			    $
+			    \begin{bmatrix}
+			    1 & 1\\
+			    -1 & -1\\
+			    \end{bmatrix}
+			    \begin{bmatrix}
+			    1 \\
+			    -1 \\
+			    \end{bmatrix}
+			    = 
+			    \begin{bmatrix}
+			    0 \\
+			    0 \\
+			    \end{bmatrix}
+			    $
+			\end{center}{}
+		
+		\end{solution}
+	\end{parts}

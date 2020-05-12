@@ -1,0 +1,49 @@
+				We first start by creating an augmented matrix $C=[AB]$ $C=
+				\begin{bmatrix}
+				    1 & 2 & 5 & 4 \\
+				    1 & 3 & 6 & 3 \\
+				    1 & 2 & 5 & 1 \\
+				\end{bmatrix}$ using elimination we can get $\begin{bmatrix}
+				    1 & 2 & 5 & 4 \\
+				    0 & 1 & 1 & -1 \\
+				    0 & 0 & 0 & -3 \\
+				\end{bmatrix}$. If we find a vector that is in the null space of $C$. We can use the relationship with the null space vector and the columns of C to find a vector in both $A$ and $C$. 
+				\newline
+				$\begin{bmatrix}
+				    1 & 2 & 5 & 4 \\
+				    0 & 1 & 1 & -1 \\
+				    0 & 0 & 0 & -3 \\
+				\end{bmatrix}\vec{x}=\begin{bmatrix}
+				    0 \\ 0 \\ 0 \\ 0 \\
+				\end{bmatrix}$
+				
+				$\vec{x}=\begin{bmatrix}
+				    -3 \\ -1 \\ 1 \\ 0 \\
+				\end{bmatrix}$ So,
+				\newline
+				$-3\begin{bmatrix}
+				    1 \\ -1 \\ 1 \\ 
+				\end{bmatrix}_1+ -1\begin{bmatrix}
+				    2 \\ 3 \\ 2 \\ 
+				\end{bmatrix}_2+1\begin{bmatrix}
+				    5 \\ 6 \\ 5 \\ 
+				\end{bmatrix}_3+0\begin{bmatrix}
+				    4 \\ 3 \\ 1 \\ 
+				\end{bmatrix}_4=\vec{0}$. Since the vectors 1 and 2 are linear combinations of $A$ and the vectors 3 and 4 are linear combinations of $B$.  Therefore 
+				\newline
+				$-3\begin{bmatrix}
+				    1 \\ -1 \\ 1 \\ 
+				\end{bmatrix}_1+ -1\begin{bmatrix}
+				    2 \\ 3 \\ 2 \\ 
+				\end{bmatrix}_2=\begin{bmatrix}
+				    3 \\ 3 \\ 3
+				\end{bmatrix}+\begin{bmatrix}
+				    2 \\ 3 \\ 2
+				\end{bmatrix}=\begin{bmatrix}
+				    5 \\ 6 \\ 5
+				\end{bmatrix}$
+				\newline
+				So $\begin{bmatrix}
+				    5 \\ 6 \\ 5
+				\end{bmatrix}$ must also be in the column space of $B$ as well in order to equal the $\vec{0}$
+			

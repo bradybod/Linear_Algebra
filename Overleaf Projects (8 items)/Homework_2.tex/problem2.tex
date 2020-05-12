@@ -1,0 +1,20 @@
+\question \S 2.5 \# 7 Consider the system 
+	\[\begin{bmatrix}
+	--r_1^T-- \\ --r_2^T-- \\ -r_1^T+ r_2^T-  
+	\end{bmatrix}\vec{x} = \vec{b}\]
+	and notice that the third row of the matrix is the sum of the first two rows. 
+	
+	\begin{parts}
+			\part Suppose that $\vec{b} = (0,0,1)$ and explain why the system has no solution.
+					\begin{solution}
+						 There is no solution because row three is a composition of rows 1 and 2.  Meaning there is no pivot in row 3.  This would prevent a solution as the first two rows of $\vec{b}=0$.
+					\end{solution}
+			\part Which right sides $\vec{b}$ will yield a solution?
+					\begin{solution}
+						Any $c\begin{bmatrix} 1 \\ 1 \\ 0\end{bmatrix}$ vector will result in a solution for the matrix.
+					\end{solution}
+			\part Explain what happens to the matrix in elimination. 
+					\begin{solution}
+						As row 3 is a linear combination of rows 1 and 2 when you do elimination you would use rows 1 and 2 to eliminate all numbers in row three which would leave it as a row of 0's
+					\end{solution}
+	\end{parts}

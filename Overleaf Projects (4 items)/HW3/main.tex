@@ -1,0 +1,108 @@
+\documentclass[]{exam}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[en-US, showdow]{datetime2}
+\usepackage{graphicx}
+
+\usepackage{arydshln}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+
+\newenvironment{smallbmatrix}
+{\left[\begin{smallmatrix}}
+{\end{smallmatrix}\right]}
+
+
+\title{Homework 3\\
+	Due \DTMdate{2020-02-21} %Add a % at the begining of the line to remove the due date from the title (or just delete this line entirely) 
+	}
+\date{ %\today %You can remove the first % in this line to show the current days date.
+	}
+\author{Name: Brady Bodily \\
+		\footnotesize Collaborators: Mitch Pound  \\
+		\footnotesize Recitation Section: 504/505/506
+		%You should probably change this to your actual name, at least if you want credit.
+		}
+\begin{document}
+\maketitle
+
+\printanswers %comment out this line to hide your answers.
+
+\begin{questions}
+	\question Let $L$ be an invertible matrix such that $A = LU$. Prove that $U$ and $A$ have the same nullspace. Your proof must consist of two parts. \\
+	1) Show that if $U\vec{x}=\vec{0}$, then $A\vec{x}=\vec{0}$.
+	2) Show that if $A\vec{x}=\vec{0}$, then $U\vec{x}=\vec{0}$.
+	
+	\begin{solution}
+	    \input{P1}
+	\end{solution}
+	
+	\question If $AB=C$, the rows of $C$ are combinations of the rows of which matrix? What information does this relationship give you about the rank of $C$? Now consider $B^\intercal A^\intercal= C^\intercal$. What can you say about the rank of $C^\intercal$? Finally, since the rank of $C$ and $C^\intercal$ are the same, what can you say about the rank of $C$ based on the ranks of $A$ and $B$? 
+	
+	\begin{solution}
+	    \input{P2}
+	\end{solution}
+	
+	\question Suppose that $A$ is an $m \times n$ matrix and $B$ is a $p \times n$ matrix. We can build the so-called ``block matrix'' $C = \begin{bmatrix} A \\ B \end{bmatrix}$. How is the nullspace $N(C)$ related to the spaces $N(A)$ and $N(B)$?\footnote{For instance, is $N(C)=N(A)$? Is $N(C) \subset N(A)$? Look for relationships such as these, possibly involving all three: $A$, $B$, and $C$.} Now, suppose that $A$ is an invertible 4 by 4 matrix. Give a basis for the nullspace of $D = \begin{bmatrix} A & A \end{bmatrix}$. 
+	
+	\begin{solution}
+	    \input{P3}
+	\end{solution}
+	
+	\question Consider the following system. Show the system has an infinite number of solutions. Then give the ``complete solution''. 
+	
+	\[\begin{bmatrix}
+	1 & 3 & 1 & 2\\
+	2 & 6 & 4 & 8\\
+	0 & 0 & 2 & 4\\
+	\end{bmatrix}
+	\begin{bmatrix}
+	x \\ y \\ z \\ t
+	\end{bmatrix} = 
+	\begin{bmatrix}
+	1 \\ 3 \\ 1
+	\end{bmatrix}\]
+	\begin{solution}
+	    \input{P4}
+	\end{solution}
+	
+	\question \S 3.4 \# 26 Recall that $\mathcal{M}_3$ is the vector space of all $3 \times 3$ matrices with real entries. Prove that each of the following collections of matrices are a subpsace of $\mathcal{M}_3$. Find a basis for each of subspaces of 3 by 3 matrices, then state the dimension of the subspace. Make sure to justify why your basis is, in fact, a basis.
+	
+	\begin{parts}
+		\part All diagonal matrices.
+			\begin{solution}
+	            \input{P5a}
+			\end{solution}
+		\part All symmetric matrices\footnote{A matrix $A$ is called \emph{symmetric} if $A^\intercal = A$.}
+			\begin{solution}
+	            \input{P5b}
+			\end{solution}
+		\part All skew-symmetric matrices \footnote{A matrix $A$ is called \emph{skew-symmetric} if $A^\intercal = -A$.}
+			\begin{solution}
+	            \input{P5c}
+			\end{solution}
+	\end{parts}
+	
+	\question In this exercise, we will explore the outer-product perspective of matrix multiplication. Every matrix whose rank is $r$ can be written as the sum of $r$ matrices of rank 1. An easy way to write a rank 1 matrix is using an outer-product (recall: $\vec{u}\vec{v}^\intercal$ is an outer-product). Construct a matrix $A$ with rank 2 that has $C(A) = \mathop{\mathbf{span}}((1,2,4)^\intercal, (2,2,1)^\intercal)$ and $C(A^\intercal) = \mathop{\mathbf{span}}((1,0)^\intercal,(1,1)^\intercal)$, you should use outer-products to find $A$.
+	
+\begin{solution}
+    \input{P6}
+\end{solution}
+	
+	\question Suppose that $A$ is a $m \times n$ matrix and $\vec{b}$ is a $m \times 1$ vector. Let $B$ be the $m \times (n+1)$ matrix formed by concatenating $\vec{b}$ to $A$, so $B = [A \, \vec{b}]$. What must be true so that $C(A)=C(B)$? What must be true if $C(A) \subset C(B)$ and $C(A) \ne C(B)$? Explain what must be true for $A \vec{x} = \vec{b}$ and $B \vec{x} = \vec{b}$ to have solutions. 
+	
+	
+	\begin{solution}
+        \input{P7}
+	\end{solution}
+	
+\end{questions}
+
+
+
+
+
+\end{document}

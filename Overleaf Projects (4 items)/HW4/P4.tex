@@ -1,0 +1,53 @@
+\begin{enumerate}[label=(\alph*)]
+\item Addition Holds: $T(\Vec{x})+T(\Vec{y}) = 
+\begin{bmatrix}
+v_2+v_4 \\
+v_1+v_3
+\end{bmatrix} = T(\Vec{x} + \Vec{y})$ 
+\newline
+Multiplication Holds: $\alpha T(\Vec{x}) = \begin{bmatrix} \alpha v_2 \\ \alpha v_1 \end{bmatrix} = T(\alpha \Vec{x})$ 
+\\ T is a linear transformation from $\mathbb{R} \to \mathbb{R}$
+
+\item Addition Holds: 
+    $T(\Vec{x}) + T\Vec{y} = \begin{bmatrix} v_1+v_3 \\ v_1+v_3\end{bmatrix} = T(\Vec{x} + \Vec{y})$
+    \\
+    Multiplication Holds:
+    $\alpha T(\Vec{x}) = \begin{bmatrix}
+    \alpha v_1 \\
+    \alpha v_1
+    \end{bmatrix} = T (\alpha \Vec{x})$
+    \\ T is a linear transformation from $\mathbb{R} \to \mathbb{R}$
+\item Addition Holds:
+    $T(\Vec{x})+ T(\Vec{y}) = \begin{bmatrix}
+    0 \\ v_1 + v_3
+    \end{bmatrix} = T(\Vec{x} + \Vec{y})$
+    \\
+    Multiplication holds: 
+    $\alpha T(\Vec{x}) = \begin{bmatrix}
+    0 \\
+    \alpha v_1
+    \end{bmatrix} = T (\alpha \Vec{x})$
+    \\ T is a linear transformation from $\mathbb{R} \to \mathbb{R}$
+\item Addition Fails:
+     $T(\Vec{x})+ T(\Vec{y}) = \begin{bmatrix}
+     0 \\ 2
+    \end{bmatrix} \ne T(\Vec{x} + \Vec{y})$
+    \\ T is not a linear transformation from $\mathbb{R} \to \mathbb{R}$
+\item Addition Holds:
+    $T(\Vec{x})+ T(\Vec{y}) = \begin{bmatrix}
+    (v_1-v_2)+(v_3-v_4) \\ (v_1 - v_2)+(v_3-v_4)
+    \end{bmatrix} = T(\Vec{x} + \Vec{y})$
+    \\
+    Multiplication holds: 
+    $\alpha T(\Vec{x}) = \begin{bmatrix}
+    \alpha (v_1-v_2) \\
+    \alpha (v_1-v_2)
+    \end{bmatrix} = T (\alpha \Vec{x})$
+    \\ T is not a linear transformation from $\mathbb{R} \to \mathbb{R}$
+\item Addition Fails:
+     $T(\Vec{x})+ T(\Vec{y}) = \begin{bmatrix}
+     v_1v_2+v_3v_4 \\ 0
+    \end{bmatrix} \ne T(\Vec{x} + \Vec{y})$
+    \\ T is not a linear transformation from $\mathbb{R} \to \mathbb{R}$
+
+\end{enumerate}

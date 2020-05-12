@@ -1,0 +1,38 @@
+			Given $y=mx+b$, we can use the given points plug them in to the equation and then create a matrix from them.
+			\newline
+			$m(1)+b=1$
+			\newline
+			$m(2)+b=1$
+			\newline
+			$m(3)+b=2$
+			\newline
+			$m(4)+b=2$
+			\newline
+			So, $\begin{bmatrix}
+			    1 \\ 2 \\ 3 \\ 4
+			\end{bmatrix} 
+			\begin{bmatrix}
+			    m
+			\end{bmatrix}=
+			\begin{bmatrix}
+			    1 \\ 1 \\ 2 \\ 2
+			\end{bmatrix}$
+			\newline
+			using $A^TAx=A^T\vec{b}$ we get 
+			\newline
+			$\begin{bmatrix}
+			    1 & 2 & 3 & 4
+			\end{bmatrix}
+			\begin{bmatrix}
+			    1 \\ 2 \\ 3 \\ 4
+			\end{bmatrix}
+			\begin{bmatrix}
+			    m
+			\end{bmatrix}=\begin{bmatrix}
+			    1 & 2 & 3 & 4
+			\end{bmatrix}
+			\begin{bmatrix}
+			    1 \\ 1 \\ 2 \\2
+			\end{bmatrix} \rightarrow 30m=17$.
+			\newline
+			So $m=\frac{17}{30}$, further $y=\frac{17}{30}x+b$ and since it passes through the origin $b=0$. Finally we get $y=\frac{17}{30}x$

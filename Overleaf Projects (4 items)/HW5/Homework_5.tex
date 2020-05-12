@@ -1,0 +1,255 @@
+\documentclass[]{exam}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[en-US, showdow]{datetime2}
+\usepackage{graphicx}
+\usepackage{multicol,enumitem}
+\usepackage{tikz}
+
+\newenvironment{smallbmatrix}
+{\left[\begin{smallmatrix}}
+{\end{smallmatrix}\right]}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\title{Homework 5\\
+	Due \DTMdate{2020-03-31} %Add a % at the beginning of the line to remove the due date from the title (or just delete this line entirely) 
+	}
+\date{ %\today %You can remove the first % in this line to show the current days date.
+	}
+\author{Name:Brady Bodily \\
+		\footnotesize Collaborators: Mitch Pound, Danny Clyde, Jaxon Willard  \\
+		\footnotesize Recitation Section: \circled{504} /505/506
+		%You should probably change this to your actual name, at least if you want credit.
+		}
+\begin{document}
+\maketitle
+
+\printanswers %comment out this line to hide your answers.
+
+\begin{questions}
+	\question Construct a matrix with the required properties or say why it is impossible. If it is impossible to construct a matrix with the given property you must give an explanation that relies on orthogonality of subspaces.:
+	
+	\begin{parts}
+		\part Construct a matrix whose column space contains 
+		$\begin{bmatrix}1 \\2\\-3\end{bmatrix}$ and 
+		$\begin{bmatrix}2 \\-3\\5\end{bmatrix}$ and
+		whose nullspace contains 
+		$\begin{bmatrix}1 \\1\\1\end{bmatrix}$.
+		
+		\begin{solution}
+			\input{1a}
+		\end{solution}
+			
+		\part Construct a matrix whose row space contains 
+		$\begin{bmatrix}1 \\2\\-3\end{bmatrix}$ and 
+		$\begin{bmatrix}2 \\-3\\5\end{bmatrix}$ and
+		whose nullspace contains 
+		$\begin{bmatrix}1 \\1\\1\end{bmatrix}$.
+		
+		\begin{solution}
+			\input{1b}
+		\end{solution}
+		
+		\part Construct a matrix $A$ such that
+		$A\vec{x} = \begin{bmatrix}1 \\1\\1\end{bmatrix}$
+		has a solution and satisfies 
+		$A^T \begin{bmatrix}1 \\0\\0\end{bmatrix}
+		= \begin{bmatrix}0 \\0\\0\end{bmatrix}$
+		
+		\begin{solution}
+			\input{1c}
+		\end{solution}
+		
+		\part Construct a matrix $A$ which is a nonzero matrix 
+		and whose rows are each orthogonal to every column.
+		
+		\begin{solution}
+            \input{1d}
+		\end{solution}
+		
+		\part Construct a matrix whose columns add up to $\vec{0}$
+		and whose rows add to a row of $1$'s.
+		
+		\begin{solution}
+			\input{1e}
+		\end{solution}				
+	\end{parts}
+
+	\question Picture \(\mathbb{R}^3\). Suppose the wall $W$ and the floor $V$ are two subspaces of 3-dimensional space. The floor and wall are not orthogonal because they share a nonzero vector (along the line where they meet). In fact, no two planes in $\mathbb{R}^3$ can be orthogonal. 
+	
+	\begin{parts}
+	\part Consider the two planes described by the column spaces of the following matrices.
+	
+	\[A= \begin{bmatrix}
+	1 & 2 \\
+	1 & 3\\
+	1 & 2
+	\end{bmatrix} 
+	\hspace{1cm} 
+	B= \begin{bmatrix}
+	5 & 4\\ 
+	6 & 3 \\ 
+	5 & 1
+	\end{bmatrix}\] 
+	
+	Consider the augmented matrix $\begin{bmatrix}A&B\end{bmatrix}$.
+	Find a vector in the nullspace of $\begin{bmatrix}A&B\end{bmatrix}$
+	and write down the linear combination of vectors which equals zero.
+	Use this linear combination to find a vector $\vec{v}$ 
+	that is in both $C(A)$ and $C(B)$.
+	
+	\begin{solution}
+			\input{2a}
+	\end{solution}
+		
+	\part We would like to understand when two subspaces \textbf{must} have a common nonzero vector, just like in the case of two planes in $\mathbb{R}^3$.
+	Consider subspaces $V$ and $W$ of $\mathbb{R}^n$. 
+	If $V$ has dimension $p$ and $W$ has dimension $q$, 
+	describe a process generalizing the previous part that will allow us to detect a nonzero vector in both $V$ and $W$.
+	What inequality involving $p$, $q$, and $n$ will \emph{guarantee}
+	that $V$ and $W$ have a nonzero vector in common?
+	
+	\begin{solution}
+		\input{2b}
+	\end{solution}	
+	
+	\end{parts}
+	
+	
+	\question \S 4.2 \# 16 What linear combination of $(1,2,-1)^\intercal$ and  $(1,0,1)^\intercal$ is closest to $\vec{b} = (2,1,1)^\intercal$? 
+	
+	\begin{solution}
+		\input{3}
+	\end{solution}
+	
+	\question Let $P$ be a projection matrix. 
+	
+	\begin{parts}
+	\part Show that if $P^2 = P$, then $(I-P)^2 = I-P$. 
+		
+	\begin{solution}
+		\input{4a}
+	\end{solution}
+			
+	\part It turns out that $I-P$ is also a projection matrix. Show that $I-P$ projects onto a space perpendicular to the subspace onto which $P$ projects vectors. (Hint: Use each of $P$ and $I-P$ to project an arbitrary vector. Are the results orthogonal?)
+	If $P$ projects onto $C(A)$, then $I - P$ projects onto which subspace? 
+	
+	\begin{solution}
+		\input{4b}
+	\end{solution}
+	
+	\end{parts}
+	
+	\question 	
+	
+	\begin{parts}
+	\part Find the best line through the origin which fits the points $(1,1),(2,1),(3,2),(4,2)$. 
+	
+	\begin{solution}
+		\input{5a}
+	\end{solution}
+	
+	\part Find the best parabola which fits the points $(-1, 1/4), (1,1/4), (2,1), (3,2).$
+	
+	\begin{solution}
+		\input{5b}
+	\end{solution}
+	
+	\end{parts}
+	
+	\question Suppose that we would like to predict the incubation period for the SARS-CoV2 virus (the one that has us all doing this assignment remotely).
+	Our prediction for the incubation period will be denoted $x$, in days.
+	We investigate $m$ COVID-19 cases and record the incubation period in each case by $b_i$.
+	This gives us a data vector: $\vec{b} = (b_1, \ldots, b_m)^\intercal$.
+	If our prediction for the incubation period was a perfect prediction,
+	then each incubation period we recorded would be $x$.
+	That is, the following system would hold:
+	\[
+	\begin{cases}
+	x=b_1, \\
+	x=b_2, \\
+	\vdots \\
+	x=b_m
+	\end{cases}
+	\] 
+	In matrix form, this is $A\vec{x}=\vec{b}$, where $\vec{x}$ is a $1 \times 1$ matrix and $A = \begin{bmatrix}1 \\ \vdots \\ 1\end{bmatrix}$.
+	
+	\begin{parts}
+	\part Explain when the system $A\vec{x} = \vec{b}$ has a solution.
+
+	\begin{solution}
+		\input{6a}
+	\end{solution}
+			
+	\part Suppose the system from part (a) has no solution (since it probably doesn't). Use least squares to find the best possible solution to the system, call the solution $\hat{x}$. 
+
+	\begin{solution}
+		\input{6b}
+	\end{solution}
+	
+	\part In statistics, we measure the error in our prediction $\hat{x}$
+	by adding the sum of the squared errors.
+	This quantity is called the \emph{variance}.
+	Each squared error term is $(b_i-\hat{x})^2$,
+	and adding these up is the same as computing
+	$\lVert\vec{b} - A \hat{x}\rVert^2$.
+	Compute the variance using this last formula.
+	
+	\begin{solution}
+		\input{6c}
+	\end{solution}
+		
+	\part Suppose that we record data from three COVID-19 cases
+	and find that the incubation periods are 1, 2, and 6 days.
+	That is, $\vec{b} = (1,2,6)^\intercal$. 
+	Use least squares to find the best solution to $A \vec{x} = \vec{b}$. 
+	How is the best solution related to the entries of $\vec{b}$?
+			
+	\begin{solution}
+		\input{6d}
+	\end{solution}
+	
+	\part We know that the error vector is orthogonal to $A \hat{x}$. 
+	Demonstrate that in the example from the previous part,
+	$A \hat{x}$ is orthogonal to $\vec{e}$.
+	
+	\begin{solution}
+		\input{6e}  
+	\end{solution}
+				
+	\end{parts}
+
+	\question
+	
+	\begin{parts}
+	\part Find orthonormal vectors $q_1, q_2, q_3$ such that $q_1, q_2$ span the column space of 
+		\[A = \begin{bmatrix}
+		4 & 1 \\ -4 & 5 \\ -2 & 1
+		\end{bmatrix}\]
+		
+	\begin{solution}
+		\input{7a}
+	\end{solution}	
+	
+	\part Which of the four fundamental subspaces contains $q_3$? 
+
+	\begin{solution}
+		\input{7b}
+	\end{solution}	
+
+	\part Solve $A \vec{x} = (1,2,7)$ by least squares.
+
+	\begin{solution}
+		\input{7c}
+	\end{solution}	
+	\end{parts}
+	
+\end{questions}
+
+
+
+
+
+\end{document}

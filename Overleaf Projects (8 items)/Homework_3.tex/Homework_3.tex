@@ -1,0 +1,400 @@
+\documentclass[]{exam}
+\usepackage{tikz}
+\usepackage{arydshln}
+\usepackage{gensymb}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[en-US, showdow]{datetime2}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\title{Homework 3\\
+	}
+\date{ \today 
+	}
+\author{Brady Bodily
+	}
+\begin{document}
+\maketitle
+
+\printanswers %comment out this line to hide your answers.
+
+%#1-----------------------------------------------------------------------------	
+\begin{questions}
+	\question Consider the matrix $C = \begin{bmatrix} A \\ B \end{bmatrix}$. How is the nullspace $N(C)$ related to the spaces $N(A)$ and $N(B)$? Now, suppose that $A$ is an invertible 4 by 4 matrix. Give a basis for the nullspace of $D = \begin{bmatrix} A & A \end{bmatrix}$. 
+	
+	\begin{solution}
+	Given, $C=\begin{bmatrix} A \\ B \end{bmatrix}$ then $\begin{bmatrix} A \\ B \end{bmatrix}N(C)=\vec{0}$. Since $A \cdot N(A)=\vec{0}$ and $B \cdot N(B)=\vec{0}$, then if the null space of $C$ exists it must be contained in $A$ and $B$. The max number of vectors allowed in the null space of C will be determined by which ever $A$ or $B$ has the fewest vectors in their null space.
+	\newline
+	Given $D=[A A]$, and $A$ is $4 \times 4$ and invertable.  Knowing that it is invertable there are 4 pivots so we can write $[A A]$ as a block matrix, $\begin{bmatrix}
+	1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+	0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+	0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+	0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\
+    \end{bmatrix}$. Given $A \neq0$ and $N(A)=\vec{0}$, since $\begin{bmatrix} A & A \end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}=\vec{0}$ then, \newline \begin{center}
+        $Ax+Ay=\vec{0} \newline 
+    A(x+y)=0 \newline 
+    (x+y)=0 \newline 
+    y=-x$ \newline
+    \end{center}
+    With this we can now get the basis of $D$ = $Span\left(
+    \begin{bmatrix} 0 \\ 0 \\ 0 \\ -1 \\ 0 \\ 0 \\ 0 \\ 1 \end{bmatrix},
+    \begin{bmatrix} 0 \\ 0 \\ -1 \\ 0 \\ 0 \\ 0 \\ 1 \\ 0 \end{bmatrix},
+    \begin{bmatrix} 0 \\ -1 \\ 0 \\ 0 \\ 0 \\ 1 \\0 \\ 0 \end{bmatrix},
+    \begin{bmatrix} -1 \\ 0 \\ 0 \\ 0 \\ 1 \\ 0 \\0 \\ 0 \end{bmatrix} \right)$
+    
+	\end{solution}
+%#2-----------------------------------------------------------------------------	
+
+	\question Consider the following system. Show the system has an infinite number of solutions. Then give the complete solution. 
+	
+	\[\begin{bmatrix}
+	1 & 3 & 1 & 2\\
+	2 & 6 & 4 & 8\\
+	0 & 0 & 2 & 4\\
+	\end{bmatrix}
+	\begin{bmatrix}
+	x \\ y \\ z \\ t
+	\end{bmatrix} = 
+	\begin{bmatrix}
+	1 \\ 3 \\ 1
+	\end{bmatrix}\]
+	\begin{solution}
+	Firstly we perform elimination, 
+	\newline
+		$\begin{bmatrix} \begin{tabular}{cccc|c}
+		1 & 3 & 1 & 2 & 1 \\
+		2 & 6 & 4 & 8 & 3 \\
+		0 & 0 & 2 & 4 & 1 \\
+		\end{tabular} \end{bmatrix}
+		\xrightarrow{R_2-2R_1}
+		\begin{bmatrix} \begin{tabular}{cccc|c}
+		1 & 3 & 1 & 2 & 1 \\
+		0 & 0 & 2 & 4 & 1 \\
+		0 & 0 & 2 & 4 & 1 \\
+		\end{tabular} \end{bmatrix}
+		\xrightarrow{R_3-R_2}
+		\begin{bmatrix} \begin{tabular}{cccc|c}
+		1 & 3 & 1 & 2 & 1 \\
+		0 & 0 & 2 & 4 & 1 \\
+		0 & 0 & 0 & 0 & 0 \\
+		\end{tabular} \end{bmatrix}$.
+		We only have 2 columns with pivots after elimination the remaining two columns are our free variables. We can now solve for the $N(A)$,
+		\newline
+	    $\begin{tabular}{ccccc}
+		x+3y+z+2t=0 & Given & y=1 & then & x=-3 \\ 
+		 & & t=0 &  & z=0 \\
+		2z+4t=0 & Given & y=0 & then & x=1 \\ 
+		 & & t=1 &  & z=-2 \end{tabular}$.
+		 \newline
+		 So $N(A)=Span \left( 
+		 \begin{bmatrix} -3 \\ 1 \\ 0 \\ 0 \\ \end{bmatrix}, 
+		 \begin{bmatrix} 1 \\ 0 \\ -2 \\ 1 \end{bmatrix}\right)$
+		\newline
+		We can now solve for $x_{particular}=\begin{bmatrix} 1/2 \\ 0 \\ 1/2 \\ 0 \end{bmatrix}$.  
+		\newline
+		The complete solution is,
+		$\begin{bmatrix} 1/2 \\ 0 \\ 1/2 \\ 0 \end{bmatrix} + \alpha \begin{bmatrix} -3 \\ 1 \\ 0 \\ 0 \\ \end{bmatrix} + \beta \begin{bmatrix} 1 \\ 0 \\ -2 \\ 1 \end{bmatrix}$
+		\newline
+		Since $\alpha$ and $\beta$ can be any number we can have infinite solutions.
+		
+	\end{solution}
+%#3-----------------------------------------------------------------------------	
+	\question \S 3.4 \# 26 Find a basis for each of the subspaces of 3 by 3 matrices, then state the dimension of the subspace. Make sure to justify why your basis is correct.
+	
+	\begin{parts}
+		\part All diagonal matrices.
+			\begin{solution}
+				$\begin{bmatrix} 
+	            1 & 0 & 0 \\
+	            0 & 1 & 0 \\
+	            0 & 0 & 1
+	            \end{bmatrix} = 
+	            \begin{bmatrix} 
+	            1 & 0 & 0 \\
+	            0 & 0 & 0 \\
+	            0 & 0 & 0
+	            \end{bmatrix}
+	            +
+	            \begin{bmatrix} 
+	            0 & 0 & 0 \\
+	            0 & 1 & 0 \\
+	            0 & 0 & 0
+	            \end{bmatrix}
+	            +
+	            \begin{bmatrix} 
+	            0 & 0 & 0 \\
+	            0 & 0 & 0 \\
+	            0 & 0 & 1
+	            \end{bmatrix}$
+	            \newline
+	            Since the matrices are linearly independent they can form a Basis. So the span of the matrices is,
+	            \newline
+	            $Span \left(
+	            \begin{bmatrix} 
+	            1 & 0 & 0 \\
+	            0 & 0 & 0 \\
+	            0 & 0 & 0
+	            \end{bmatrix},
+	            \begin{bmatrix} 
+	            0 & 0 & 0 \\
+	            0 & 1 & 0 \\
+	            0 & 0 & 0
+	            \end{bmatrix},
+	            \begin{bmatrix} 
+	            0 & 0 & 0 \\
+	            0 & 0 & 0 \\
+	            0 & 0 & 1
+	            \end{bmatrix}
+	            \right)$
+	            Which tells us the dimension is 3. Any linear combination of these would result in a diagonal matrix.
+			\end{solution}
+		\part All symmetric matrices $(A^T = A)$.
+			\begin{solution}
+                We will use the matrix $A=\begin{bmatrix}
+                a & b & c \\
+                b & d & e \\
+                c & e & f
+                \end{bmatrix}$ which meets $A^T=A$ 
+                \newline
+                $\begin{bmatrix}
+                a & b & c \\
+                b & d & e \\
+                c & e & f
+                \end{bmatrix} = 
+                \begin{bmatrix}
+                a & 0 & 0 \\
+                0 & 0 & 0 \\
+                0 & 0 & 0
+                \end{bmatrix}
+                +
+                \begin{bmatrix}
+                0 & b & 0 \\
+                b & 0 & 0 \\
+                0 & 0 & 0
+                \end{bmatrix}
+                +
+                \begin{bmatrix}
+                0 & 0 & c \\
+                0 & 0 & 0 \\
+                c & 0 & 0
+                \end{bmatrix}
+                +
+                \begin{bmatrix}
+                0 & 0 & 0 \\
+                0 & d & 0 \\
+                0 & 0 & 0
+                \end{bmatrix}
+                +
+                \begin{bmatrix}
+                0 & 0 & 0 \\
+                0 & 0 & e \\
+                0 & e & 0
+                \end{bmatrix}
+                +
+                \begin{bmatrix}
+                0 & 0 & 0 \\
+                0 & 0 & 0 \\
+                0 & 0 & f
+                \end{bmatrix}
+               $
+               Since they are linearly independent they can form a basis.
+               \newline
+                $Span = \left( \begin{bmatrix}
+                a & 0 & 0 \\
+                0 & 0 & 0 \\
+                0 & 0 & 0
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                0 & b & 0 \\
+                b & 0 & 0 \\
+                0 & 0 & 0
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                0 & 0 & c \\
+                0 & 0 & 0 \\
+                c & 0 & 0
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                0 & 0 & 0 \\
+                0 & d & 0 \\
+                0 & 0 & 0
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                0 & 0 & 0 \\
+                0 & 0 & e \\
+                0 & e & 0
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                0 & 0 & 0 \\
+                0 & 0 & 0 \\
+                0 & 0 & f
+                \end{bmatrix} \right)$
+                $A=A^T$ for each of the matrices in the span. Since there are 6 matrices in the span the dimension is 6. Any linear combination of these would result in a symmetric matrix.
+			\end{solution}
+		\part All skew-symmetric matrices $(A^T = -A)$.
+			\begin{solution}
+				For $(A^T = -A)$ to be true then the diagonal has to be 0's. So,
+				\newline
+				$
+				\begin{bmatrix}
+				0 & a & b \\
+				-a & 0 & c \\
+				-b & -c & 0
+				\end{bmatrix}
+				=
+				\begin{bmatrix}
+				0 & a & 0 \\
+				-a & 0 & 0 \\
+				0 & 0 & 0
+				\end{bmatrix}
+				+
+				\begin{bmatrix}
+				0 & 0 & b \\
+				0 & 0 & 0 \\
+				-b & 0 & 0
+				\end{bmatrix}
+				+
+				\begin{bmatrix}
+				0 & 0 & 0 \\
+				0 & 0 & c \\
+				0 & -c & 0
+				\end{bmatrix}
+				$
+				Since they are linearly independent then span is, 
+				\newline
+				$
+				Span \left(
+				\begin{bmatrix}
+				0 & a & 0 \\
+				-a & 0 & 0 \\
+				0 & 0 & 0
+				\end{bmatrix}
+				,
+				\begin{bmatrix}
+				0 & 0 & b \\
+				0 & 0 & 0 \\
+				-b & 0 & 0
+				\end{bmatrix}
+				,
+				\begin{bmatrix}
+				0 & 0 & 0 \\
+				0 & 0 & c \\
+				0 & -c & 0
+				\end{bmatrix}
+				\right)
+				$
+				Since there are 3 matrices in the span the dimension is 3, and $(A^T = -A)$ is true for each of the matrices in the span. Any linear combination of these matrices would result in a symmetric matrix.
+			\end{solution}
+	\end{parts}
+%#4-----------------------------------------------------------------------------	
+	\question An exercise using the outer-product method of matrix multiplication. Every matrix with rank $r$ can be written as the sum of $r$ rank 1 matrices. An easy way to write a rank 1 matrix is using an outer-product (recall: $\vec{u}\vec{v}^T$ is an outer-product). Construct a matrix $A$ with rank 2 that has $C(A) = span((1,2,4), (2,2,1))$ and $C(A^T) = span((1,0),(1,1))$, you should use outer-products to find $A$. Then find a factorization on $A$ into a 3 by 2 matrix times a 2 by 2 matrix, you should think about the outer product method of matrix multiplication to help you.
+	
+\begin{solution}
+	Given, $C(A)=Span \left( 
+	\begin{bmatrix}
+	1 \\ 2 \\ 4
+	\end{bmatrix}
+	,
+	\begin{bmatrix}
+	2 \\ 2 \\ 1
+	\end{bmatrix}
+	\right)$
+	and 
+	$C(A^T)=Span \left( 
+	\begin{bmatrix}
+	1 \\ 0
+	\end{bmatrix}
+	,
+	\begin{bmatrix}
+	1 \\ 1
+	\end{bmatrix}
+	\right)$
+	We can construct the outer product from the column space of $C(A)$ and $C(A^T)$. So,
+	\newline
+	$
+	\begin{bmatrix}
+	1 \\ 2 \\ 4
+	\end{bmatrix}
+	\begin{bmatrix}
+	1 & 0
+	\end{bmatrix}
+	+
+	\begin{bmatrix}
+	2 \\ 2 \\ 1
+	\end{bmatrix}
+	\begin{bmatrix}
+	1 & 1
+	\end{bmatrix}
+	=A=
+	\begin{bmatrix}
+	1 & 0 \\
+	2 & 0 \\
+	4 & 0
+	\end{bmatrix}
+	+
+	\begin{bmatrix}
+	2 & 2 \\
+	2 & 2 \\
+	1 & 1
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	3 & 2 \\
+	4 & 2 \\
+	5 & 1
+	\end{bmatrix}
+	$
+	\newline
+	Using the outer product vectors we can create 2 matrices and verify that the product equals $A$.
+	$
+	\begin{bmatrix}
+	1 & 2 \\
+	2 & 2 \\
+	4 & 1
+	\end{bmatrix}
+	\begin{bmatrix}
+	1 & 0 \\
+	1 & 1 \\
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	3 & 2 \\
+	4 & 2 \\
+	5 & 1
+	\end{bmatrix}
+	=A
+	$
+\end{solution}
+%#5-----------------------------------------------------------------------------	
+	
+	\question Suppose that $A$ is a $m \times n$ matrix and $\vec{b}$ is a $m \times 1$ vector. Let $B$ be the $m \times (n+1)$ matrix formed by adding $\vec{b}$ to $A$, so $B = [A \, \vec{b}]$. What must be true so that $C(A)=C(B)$? What must be true if $C(A)$ is smaller that $C(B)$? Explain what must be true for $A \vec{x} = \vec{b}$ and $B \vec{x} = \vec{b}$ to have solutions. 
+	
+	
+	\begin{solution}
+	    Since we find column spaces by the columns with pivots after elimination.
+		For
+		\newline
+		$C(A)=C(B)$, $B[A]$ has to equal $C(A) \And C(B)$ therefore $\vec{b}$ can not add a pivot. So $\vec{b}$ is a linear combination of the columns of $A$.
+		\newline
+		\newline
+		If $C(A) < C(B)$ then $\vec{b}$ added a pivot and is not a linear combination of the columns of $A$
+		\newline
+		\newline
+		For $A\vec{x}=\vec{b}$ and $B\vec{x}=\vec{b}$, since $A \And B$ are different sizes $\vec{x}$ can not be the same vector because it will also be different sizes.  Therefore $\vec{b}$ must be in the column space of $A \And B$.
+	\end{solution}
+	
+
+\end{questions}
+
+
+
+
+
+\end{document}

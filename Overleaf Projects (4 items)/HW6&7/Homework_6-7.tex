@@ -1,0 +1,378 @@
+\documentclass[]{exam}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[en-US, showdow]{datetime2}
+\usepackage{graphicx}
+\usepackage{multicol,enumitem}
+
+\newenvironment{smallbmatrix}
+{\left[\begin{smallmatrix}}
+{\end{smallmatrix}\right]}
+
+
+\title{Homework 6 \& 7 \\
+	Due \DTMdate{2020-04-24} %Add a % at the beginning of the line to remove the due date from the title (or just delete this line entirely) 
+	}
+\date{ %\today %You can remove the first % in this line to show the current days date.
+	}
+\author{Name: Brady Bodily \\
+		\footnotesize Collaborators: Mitch Pound, Danny Clyde, Jaxon Willard, Jared Horton  \\
+		\footnotesize Recitation Section: 504
+		%You should probably change this to your actual name, at least if you want credit.
+		}
+\begin{document}
+\maketitle
+
+\printanswers %comment out this line to hide your answers.
+
+\begin{questions}
+
+%HOMEWORK 6
+\question \S 5.1\# 1-6
+Complete the following problems. Give a \textit{one-sentence} justification of each (in other words, don't spend an eternity answering these questions).
+
+\begin{parts}
+	\part If a 4 by 4 matrix has determinant $\det A = \frac{1}{2}$,
+	what are $\det(3A)$, $\det(-A)$, and $\det(A^3)$?
+	
+	\begin{solution}
+		\input{p1a}
+	\end{solution}
+	
+	\part If a 3 by 3 matrix has determinant $\det A = -1$,
+	what are $\det(\frac{1}{2}A)$, $\det(-A)$, and $\det(A^2)$?
+	
+	\begin{solution}
+        \input{p1b}
+    \end{solution}
+	
+	\part State whether each is true or false, with a one-sentence reason if true or a counterexample if false.
+	\begin{subparts}
+		\subpart The determinant of $I+A$ is $1+\det A$.
+		\subpart The determinant of $ABC$ is $|A||B||C|$.
+		\subpart The determinant of $4A$ is $4|A|$.
+	\end{subparts}
+	
+	\begin{solution}
+        \input{p1c}
+    \end{solution}
+	
+	\part Let $J_n$ denote the $n \times n$ ``reverse identity matrix''.
+	$J_3$ and $J_4$ are given as examples below:
+	\[ J_3 = \begin{bmatrix} 0&0&1 \\ 0&1&0 \\ 1&0&0 \end{bmatrix}, \qquad
+       J_4 = \begin{bmatrix} 0&0&0&1 \\ 0&0&1&0 \\ 0&1&0&0 \\ 1&0&0&0 \end{bmatrix}. \]
+    \begin{subparts}
+    	\subpart Which row or column exchanges show that $|J_3|=-1$ and $|J_4|=1$?
+    	\subpart Compute $|J_4|$, $|J_5|$, and $|J_6|$.
+    	\subpart Propose a rule for $|J_n|$ and use it to compute $|J_{101}|$.
+    \end{subparts}
+    
+    \begin{solution}
+		\input{p1d}
+	\end{solution}
+    
+    \item Use the fact that the determinant is linear in each row 
+    to show that $\det A = 0$ whenever $A$ has a row of zeros.
+    
+    \begin{solution}
+		\input{p1e}
+	\end{solution}
+\end{parts}
+
+\question Recall that an orthogonal matrix $Q$ is a matrix satisfying $Q^\intercal Q = I$. If $Q$ is a square orthogonal matrix, prove that $\det Q = \pm 1$.
+
+(\textbf{Hint:} Use the fact that $|A^\intercal| = |A|$ and $|AB|=|A||B|$.)
+
+\begin{solution}
+	You can write your solution here!
+\end{solution}
+
+	
+\question \S 5.1 \# 28 State if the following statements are true are false. If true provide an explanation, if false give a 2 by 2 counterexample.
+	
+\begin{parts}
+	\part If $A$ is not invertible, then $AB$ is not invertible. 
+	
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+	
+	\part The determinant of $A$ is always the product of its pivots.
+	
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+	
+	\part The determinant of $A-B$ equals $|A| - |B|$.
+	
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+	
+	\part $AB$ and $BA$ have the same determinant. 
+	
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+\end{parts}
+
+\question Consider a 3 by 3 matrix whose entries are all 1 or -1. Show the maximum determinant of such a matrix is 4. Give an example with determinant equal to 4. 
+
+(\textbf{Hint:} First explain why the determinant is less than or equal to 6. Then individually rule out why the determinant cannot be 6 and why the determinant cannot be 5.)
+	
+\begin{solution}
+	You can write your solution here!
+\end{solution}
+
+\question Suppose that $A \vec{x} = \lambda\vec{x}$. Please prove the following. 
+	
+\begin{parts}
+	\part 	$\lambda^2$ is an eigenvalue of $A^2$.
+
+	\begin{solution}
+		\input{P5A}
+	\end{solution}
+	
+	\part  $\lambda^{-1}$ is an eigenvalue of $A^{-1}$. (This means the eigenvalues of inverses are reciprocals!)
+	
+	\begin{solution}
+		\input{P5B}
+	\end{solution}
+	
+	\part $\lambda + k$ is an eigenvalue of $A + kI$. (So changing all the diagonals by $k$ shifts the eigenvalues by $k$.)
+	
+	\begin{solution}
+		\input{P5c}
+	\end{solution}
+\end{parts}
+
+\question Recall that the characteristic polynomial $\det(A-\lambda I)$ can always be written $(\lambda_1 - \lambda)(\lambda_2 - \lambda) \cdots (\lambda_n - \lambda)$ where each $\lambda_i$ is a root of $\det(A-\lambda I)$. Use this to prove that det$(A) = \lambda_1\lambda_2\cdots\lambda_n$.
+
+(\textbf{Hint:} Make a good choice to substitute for $\lambda$.)
+
+\begin{solution}
+	\input{P6}
+\end{solution}
+
+\question Diagonalize the matrix $A$ below. Then use the diagonalization to show that the given formula for $A^k$ holds.
+	
+\begin{align*}
+	A = \begin{bmatrix}
+	2 & -1 \\ -1 & 2
+	\end{bmatrix} & &
+	A^k = \frac{1}{2}\begin{bmatrix}
+	1 + 3^k & 1 - 3^k \\ 1 - 3^k & 1 + 3^k
+	\end{bmatrix}
+\end{align*}
+
+\begin{solution}
+	You can write your solution here!
+\end{solution}
+	
+\question One important theorem in linear algebra is the \emph{Cayley-Hamilton Theorem}. This theorem states that if $p(\lambda) = \det(A-\lambda I)$ is the characteristic polynomial for $A$, then $p(A)=0$. This is surprising because $\lambda$, which is a scalar, is replaced by the matrix $A$ in the polynomial and it evaluates to 0. 
+	
+\begin{parts}
+	\part Verify that the Cayley-Hamilton Theorem works for \[A= \begin{bmatrix}
+	a & b \\ 0 & d
+	\end{bmatrix}.\]
+	That is, find the characteristic polynomial for $A$,
+	then replace $\lambda$ with $A$
+	and verify that the resulting expression simplifies to the zero matrix.
+	
+	\begin{solution}
+		\input{P8a}
+	\end{solution}
+	
+	\part Together, we will prove the Cayley-Hamilton Theorem in the special case where $A$ is a diagonalizable $n\times n$ matrix.
+	Assume, for the rest of this problem, that $A$ has been diagonalized as
+	$A=S\Lambda S^{-1}$.
+	
+	\begin{subparts}
+		\subpart Let $\lambda_1,\lambda_2,\dots,\lambda_n$
+		be the eigenvalues of $A$.
+		Use the expression $A=S\Lambda S^{-1}$
+		to argue that $\lambda_i I - A = S(\lambda_i I - \Lambda) S^{-1}$.
+		
+		\begin{solution}
+			\input{P8b}
+		\end{solution}
+		
+		\subpart Recall that the characteristic polynomial is
+		$p(\lambda) = \det(A-\lambda I)$.
+		Write a brief explanation about why
+		$\lambda_1,\dots,\lambda_n$ are the roots of this polynomial.
+		Then explain why this means we can factor
+		$p(\lambda) = (\lambda_1-\lambda)(\lambda_2-\lambda)\cdots(\lambda_n-\lambda)$.
+		
+		\begin{solution}
+			\input{P8C}
+		\end{solution}
+		
+		\subpart Let us substitute $A$ into the (factored) characteristic polynomial, as follows:
+		$p(A) = (\lambda_1 I-A)(\lambda_2 I-A)\cdots(\lambda_n I-A)$.
+		Use your answer from the first part to simplify this expression 
+		and explain why we get zero.
+		
+		\begin{solution}
+			You can write your solution here!
+		\end{solution}
+	\end{subparts}
+\end{parts}
+
+%HOMEWORK 7
+
+\question Let $S$ be a symmetric matrix ($S=S^T$).
+Using the argument in parts (a)-(d),
+we will prove that one can always choose the eigenvectors of $S$ to be orthonormal.
+
+\begin{parts}
+	\part Let's first start with a simple case. 
+	Let $\lambda_1$ be a nonzero eigenvalue of $S$ with eigenvector $\vec{x}$
+	and assume that $0$ is an eigenvalue of $S$ with eigenvector $\vec{y}$.
+	That is, $S\vec{x} = \lambda_1\vec{x}$ and $S\vec{y} = 0\vec{y}$ and $\lambda_1 \neq 0$. 
+	We will ignore the other eigenvalues and eigenvectors of $S$ for now.
+	Argue that $\vec{x}$ and $\vec{y}$ are orthogonal in this case.
+	
+	(\textbf{Hint:} You need to compute $\vec{y}^\intercal \vec{x}$.
+	Manipulate this expression by multiplying by a fancy form of one involving $\lambda_1$.)
+	
+	\begin{solution}
+		\input{P9A}
+	\end{solution}
+	
+	\part Now suppose that $S\vec{x} = \lambda_1\vec{x}$ and $S\vec{y} = \lambda_2\vec{y}$, where $\lambda_1 \ne \lambda_2$. 
+	Consider a shifted matrix $S' = S - \lambda_2 I$. 
+	Argue $\lambda_1-\lambda_2$ and $0$ are among the eigenvalues of $S'$
+	with corresponding eigenvectors $\vec{x}$ and $\vec{y}$.
+	Use part (a) to argue that $\vec{x}$ and $\vec{y}$ are orthogonal.
+	
+	\begin{solution}
+		\input{P9B}
+	\end{solution}
+	
+	\part \textbf{Summary so far:} We have shown that if $\vec{x}$ and $\vec{y}$ are eigenvectors of $S$ corresponding to \textit{distinct} eigenvalues of $S$, then $\vec{x}\perp\vec{y}$. We can then normalize each vector to make them orthonormal. 
+	
+	(You don't need to do anything for this part, but make sure you understand what's happening.)
+	
+	\part We've handled the case where eigenvalues are distinct. 
+	All that's left to do is show that when we have a repeated eigenvalue, the eigenvectors for that eigenvalue can be chosen orthonormal.
+	Suppose $S$ has a repeated eigenvalue $\lambda$ with eigenvectors $\vec{x}_1,\vec{x}_2,\dots,\vec{x}_n$.
+	What procedure ensures that we can use these to find an orthonormal set of eigenvectors with eigenvalue $\lambda$?
+	
+	\begin{solution}
+		\input{P9C}
+	\end{solution}
+\end{parts} 
+
+\question In the previous problem you proved part of the spectral theorem, which states: Every symmetric matrix can be diagonalized as $S = Q \Lambda Q^T$ where $\Lambda$ is a diagonal matrix of real eigenvalues and the columns of $Q$ are orthonormal. (Notice, this is a lot more special than just a regular diagonalization, since orthogonal matrices are blue-ribbon matrices). 
+
+To see an example of the Spectral Theorem,
+diagonalize
+\[S = \begin{bmatrix}
+1 & 2 \\ 2 & 4
+\end{bmatrix}\]
+using an orthogonal matrix $Q$.
+
+\begin{solution}
+	You can write your solution here!
+\end{solution}
+
+\question Let $S$ be a symmetric matrix with positive eigenvalues and $\vec{x}$ be \textit{any} nonzero vector. Prove that $S$ is positive definite. 
+That is, $\vec{x}^T S \vec{x} >0$.
+
+(\textbf{Hint:} Use the Spectral Theorem to write $S=Q\Lambda Q^\intercal$. 
+Name the vector $\vec{y}=Q^\intercal\vec{x}$ and suppose it is given by $\vec{y}=(y_1,y_2,\dots,y_n)$. Rewrite the expression $\vec{x}^\intercal S \vec{x}$ by substituting appropriately and expand the expression to see that the result is always positive.)
+
+\begin{solution}
+	
+\end{solution}
+
+\question Let $S$ be a symmetric matrix and $\lambda_{min}$ be the smallest eigenvalue of $S$. In parts (a)-(c), we will show that all the diagonal entries of $S$ are at least as large as $\lambda_{min}$. 
+	
+Here is an example to help you understand what we are trying to show.
+The matrix 
+\[\begin{bmatrix}
+3  & 2 &  4\\
+2  & 0 &  2\\
+4  & 2 &  4
+\end{bmatrix}\] 
+has eigenvalues $-1,-1,8$. The smallest eigenvalue is $\lambda_{min} = -1$, and the diagonal entries are $3$, $0$, and $4$, all of which are bigger than $-1$.
+
+\begin{parts}
+	\part  Show that if any matrix $A$ is positive definite, then all the diagonal entries of $A$ are strictly positive.
+	
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+
+	\part This will be a proof by contradiction.
+	So we will suppose that there is a diagonal entry of $S$, 
+	say $s_{ii}$, such that $s_{ii} < \lambda_{min}$.
+	Prove that $S- s_{ii}I$ has positive eigenvalues. 
+
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+	
+	\part Use parts (a) and (b) to argue that there is no diagonal entry of $S$ smaller than $\lambda_{min}$.
+	
+	(\textbf{Hint:} Is the matrix $S- s_{ii}I$ positive definite? What are its diagonal entries?)
+	
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+
+	\end{parts}
+
+\question Let $A = \begin{bmatrix}
+1 & 2 \\ 3 & 6
+\end{bmatrix}$. Use a diagonalization of \(A^\intercal A\) to find a singular value decomposition of $A$.
+
+\begin{solution}
+	You can write your solution here!
+\end{solution}
+
+\question Compute the pseudoinverse of $A = \begin{bmatrix}
+2 & 2\\ 1 &1
+\end{bmatrix}$.
+
+\begin{solution}
+	You can write your solution here!
+\end{solution}
+
+\question Consider the linear transformation $\frac{d}{dx}\colon\mathcal{P}_2\to\mathcal{P}_1$ which takes the derivative. 
+That is, $\frac{d}{dx}(a+bx+cx^2) = b+2cx$.
+We have seen that with respect to the bases $\mathcal{B}_1= \{1,x,x^2\}$ in the domain and $\mathcal{B}_2=\{1,x\}$ in the codomain, the matrix representation of $\frac{d}{dx}$ is
+\[ A = \begin{bmatrix}0&1&0\\0&0&2\end{bmatrix}. \]
+
+\begin{parts}
+	\part Briefly explain (without referencing the matrix representation $A$) why the linear transformation $\frac{d}{dx}$ is not invertible, then briefly explain why the matrix $A$ is not invertible.
+	
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+	
+	\part Compute the pseudoinverse of $A$.
+	
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+	
+	\part Consider the linear transformation $\int_0^x \colon \mathcal{P}_1 \to \mathcal{P}_2$ which takes integrals. 
+	That is, $\int_0^x (a+bt)\,dt = 0+ax+\frac{1}{2}bx^2$.
+	Find the matrix representation with respect to $\mathcal{B}_2$ and $\mathcal{B}_1$.
+	
+	\begin{solution}
+		You can write your solution here!
+	\end{solution}
+\end{parts}
+
+	
+\end{questions}
+
+
+
+
+
+\end{document}
